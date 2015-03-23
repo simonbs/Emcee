@@ -107,7 +107,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
             timer.invalidate()
         }
         
-        clearNotificationCenterTimer = NSTimer(timeInterval: 6, target: self, selector: Selector("clearNotificationCenter:"), userInfo: nil, repeats: false)
+        clearNotificationCenterTimer = NSTimer.scheduledTimerWithTimeInterval(7, target: self, selector: Selector("clearNotificationCenter:"), userInfo: nil, repeats: false)
     }
     
     func clearNotificationCenter(sender: AnyObject) {

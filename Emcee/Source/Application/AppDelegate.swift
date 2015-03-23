@@ -15,6 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     private let statusItemView: StatusItemView
     private let playersAgent = PlayersAgent()
     private var activePlayer: Player?
+    private var clearNotificationCenterTimer: NSTimer?
     
     override init() {
         let statusBar = NSStatusBar.systemStatusBar();
@@ -102,9 +103,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         NSUserNotificationCenter.defaultUserNotificationCenter().delegate = self
         NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
         
-        after(6) {
-            NSUserNotificationCenter.defaultUserNotificationCenter().removeAllDeliveredNotifications()
+        if let timer = clearNotificationCenterTimer {
+            timer.invalidate()
         }
+        
+        clearNotificationCenterTimer = NSTimer(timeInterval: 6, target: self, selector: Selector("clearNotificationCenter:"), userInfo: nil, repeats: false)
+    }
+    
+    func clearNotificationCenter(sender: AnyObject) {
+        NSUserNotificationCenter.defaultUserNotificationCenter().removeAllDeliveredNotifications()
     }
     
     func userNotificationCenter(center: NSUserNotificationCenter, shouldPresentNotification notification: NSUserNotification) -> Bool {

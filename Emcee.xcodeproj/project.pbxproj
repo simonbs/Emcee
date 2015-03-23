@@ -30,7 +30,6 @@
 		72AF3B871AC031390018DC12 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 72AF3B831AC030FA0018DC12 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		72D09C401AC0337A00913968 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72D09C3E1AC0336400913968 /* SwiftyJSON.framework */; };
 		72D09C411AC0338500913968 /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 72D09C3E1AC0336400913968 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		72D09C451AC0365D00913968 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D09C441AC0365D00913968 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,7 +102,6 @@
 		726BFAC71AC0132500CFC4BE /* SpotifyPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyPlayer.swift; sourceTree = "<group>"; };
 		72AF3B831AC030FA0018DC12 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 		72D09C3E1AC0336400913968 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
-		72D09C441AC0365D00913968 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,7 +279,6 @@
 		72D09C431AC0365400913968 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				72D09C441AC0365D00913968 /* Extensions.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -437,7 +434,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				726BFAAC1AC012AA00CFC4BE /* AppDelegate.swift in Sources */,
-				72D09C451AC0365D00913968 /* Extensions.swift in Sources */,
 				726BFAAD1AC012AA00CFC4BE /* StatusItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

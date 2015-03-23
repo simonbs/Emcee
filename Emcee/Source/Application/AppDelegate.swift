@@ -21,14 +21,30 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         let statusBar = NSStatusBar.systemStatusBar();
         let length: CGFloat = -1 // NSVariableStatusItemLength
         let item = statusBar.statusItemWithLength(length);
-        statusItemView = StatusItemView(item: item, image: NSImage(named: "statusbar")!)
+        statusItemView = StatusItemView(item: item)
         super.init()
+        statusItemView.style = isStatusBarDark() ? .Light : .Dark
         playersAgent.delegate = self
         statusItemView.delegate = self
     }
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+        NSDistributedNotificationCenter.defaultCenter().addObserver(self, selector: Selector("interfaceThemeChanged:"), name: "AppleInterfaceThemeChangedNotification", object: nil)
         usePlayer(playersAgent.runningPlayers.first)
+    }
+    
+    func interfaceThemeChanged(notification: NSNotification) {
+        statusItemView.style = isStatusBarDark() ? .Light : .Dark
+    }
+    
+    private func isStatusBarDark() -> Bool {
+        if let settings = NSUserDefaults.standardUserDefaults().persistentDomainForName(NSGlobalDomain) {
+            if let style = settings["AppleInterfaceStyle"] as? String {
+                return style == "Dark"
+            }
+        }
+        
+        return false
     }
     
     func statusItemViewRightClicked(view: StatusItemView) {

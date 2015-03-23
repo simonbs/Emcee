@@ -14,10 +14,15 @@ import Cocoa
 }
 
 class StatusItemView: NSView {
-   
+    
+    enum Style: String {
+        case Dark = "dark"
+        case Light = "light"
+    }
+    
     internal let item: NSStatusItem
     internal weak var delegate: StatusItemViewDelegate?
-    internal var image: NSImage {
+    internal var style: Style = .Dark {
         didSet { needsDisplay = true }
     }
     internal var text: String? {
@@ -31,9 +36,8 @@ class StatusItemView: NSView {
         }
     }
     
-    init(item: NSStatusItem, image: NSImage) {
+    init(item: NSStatusItem) {
         self.item = item
-        self.image = image
         
         let thickness = NSStatusBar.systemStatusBar().thickness
         let rect = CGRectMake(0, 0, thickness, thickness)
@@ -53,15 +57,22 @@ class StatusItemView: NSView {
         let thickness = NSStatusBar.systemStatusBar().thickness
         
         if let text = text {
+            var attributes: [String: AnyObject] = [ NSFontNameAttribute: NSFont.systemFontOfSize(20) ]
+            if style == .Light {
+                attributes[NSForegroundColorAttributeName] = NSColor.whiteColor()
+            } else {
+                attributes[NSForegroundColorAttributeName] = NSColor.blackColor()
+            }
+            
             let str = text as NSString
             let maxSize = NSSize(width: CGFloat(MAXFLOAT), height: thickness)
-            let attributes = [ NSFontNameAttribute: NSFont.systemFontOfSize(20) ]
             let textSize = str.boundingRectWithSize(maxSize, options: nil, attributes: attributes)
             let yOffset = (thickness - textSize.height) / 2
             let rect = NSRect(x: 0, y: yOffset, width: textSize.width, height: textSize.height)
             str.drawInRect(rect, withAttributes: attributes)
             item.length = rect.width
         } else {
+            let image = NSImage(named: "statusbar-\(style.rawValue)")!
             let yOffset = (thickness - image.size.height) / 2
             let rect = CGRectMake(0, yOffset, image.size.width, image.size.height)
             image.drawInRect(rect)

@@ -27,9 +27,14 @@
 		726BFACB1AC0132500CFC4BE /* RdioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFAC61AC0132500CFC4BE /* RdioPlayer.swift */; };
 		726BFACC1AC0132500CFC4BE /* SpotifyPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFAC71AC0132500CFC4BE /* SpotifyPlayer.swift */; };
 		72AF3B851AC0312C0018DC12 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72AF3B831AC030FA0018DC12 /* Alamofire.framework */; };
-		72AF3B871AC031390018DC12 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 72AF3B831AC030FA0018DC12 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		72CDF6161AC0910D008086C3 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72AF3B831AC030FA0018DC12 /* Alamofire.framework */; };
 		72D09C401AC0337A00913968 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72D09C3E1AC0336400913968 /* SwiftyJSON.framework */; };
-		72D09C411AC0338500913968 /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 72D09C3E1AC0336400913968 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		72DA7DBE1AC098600018C83C /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72DA7DBD1AC098600018C83C /* CryptoSwift.framework */; };
+		72DA7DBF1AC0986A0018C83C /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72DA7DBD1AC098600018C83C /* CryptoSwift.framework */; };
+		72DA7DC11AC09B880018C83C /* LastFMKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 726BFA621AC0124800CFC4BE /* LastFMKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		72DA7DC31AC09B9B0018C83C /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72DA7DBD1AC098600018C83C /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		72DA7DC41AC09B9D0018C83C /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72AF3B831AC030FA0018DC12 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		72DA7DC51AC09BAC0018C83C /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72D09C3E1AC0336400913968 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +54,11 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				72DA7DC11AC09B880018C83C /* LastFMKit.framework in Embed Frameworks */,
 				726BFA9F1AC0125800CFC4BE /* PlayersKit.framework in Embed Frameworks */,
+				72DA7DC41AC09B9D0018C83C /* Alamofire.framework in Embed Frameworks */,
+				72DA7DC31AC09B9B0018C83C /* CryptoSwift.framework in Embed Frameworks */,
+				72DA7DC51AC09BAC0018C83C /* SwiftyJSON.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,8 +78,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				72AF3B871AC031390018DC12 /* Alamofire.framework in CopyFiles */,
-				72D09C411AC0338500913968 /* SwiftyJSON.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +109,7 @@
 		726BFAC71AC0132500CFC4BE /* SpotifyPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyPlayer.swift; sourceTree = "<group>"; };
 		72AF3B831AC030FA0018DC12 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 		72D09C3E1AC0336400913968 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
+		72DA7DBD1AC098600018C83C /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +118,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				726BFA9E1AC0125800CFC4BE /* PlayersKit.framework in Frameworks */,
+				72DA7DBE1AC098600018C83C /* CryptoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +126,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72CDF6161AC0910D008086C3 /* Alamofire.framework in Frameworks */,
+				72DA7DBF1AC0986A0018C83C /* CryptoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +259,7 @@
 		726BFAAE1AC012D100CFC4BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				72DA7DBD1AC098600018C83C /* CryptoSwift.framework */,
 				72D09C3E1AC0336400913968 /* SwiftyJSON.framework */,
 				72AF3B831AC030FA0018DC12 /* Alamofire.framework */,
 			);
@@ -570,6 +582,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Emcee/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -585,6 +598,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Emcee/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -604,6 +618,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)",
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -613,6 +628,10 @@
 				INFOPLIST_FILE = LastFMKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -632,11 +651,16 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)",
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = LastFMKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";

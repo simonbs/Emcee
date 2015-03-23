@@ -8,6 +8,7 @@
 
 import Cocoa
 import PlayersKit
+import LastFMKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate, StatusItemViewDelegate, PlayersAgentDelegate, PlayerDelegate {
@@ -16,6 +17,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     private let playersAgent = PlayersAgent()
     private var activePlayer: Player?
     private var clearNotificationCenterTimer: NSTimer?
+    private let themeChangedNotification = "AppleInterfaceThemeChangedNotification"
+    private let lastFMAPIKey = "01b8faa134fd09c93bb5a64c83516b20"
+    private let lastFMSecret = "c5db3db17beb4fce4b568bf10aac6ee1"
     
     override init() {
         let statusBar = NSStatusBar.systemStatusBar();
@@ -29,7 +33,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     }
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        NSDistributedNotificationCenter.defaultCenter().addObserver(self, selector: Selector("interfaceThemeChanged:"), name: "AppleInterfaceThemeChangedNotification", object: nil)
+        let lastFMClient = LastFMClient(apiKey: lastFMAPIKey, secret: lastFMSecret)
+        lastFMClient.authorize()
+        
+        let notificationCenter = NSDistributedNotificationCenter.defaultCenter()
+        notificationCenter.addObserver(self, selector: Selector("interfaceThemeChanged:"), name: themeChangedNotification, object: nil)
         usePlayer(playersAgent.runningPlayers.first)
     }
     

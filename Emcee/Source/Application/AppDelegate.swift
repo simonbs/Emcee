@@ -117,7 +117,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         notification.title = track.trackName
         notification.subtitle = track.albumName
         notification.informativeText = track.artistName
-        notification.contentImage = track.artwork
+        if let artwork = track.artwork {
+            notification.setValue(artwork, forKey: "_identityImage")
+        }
+        
         NSUserNotificationCenter.defaultUserNotificationCenter().delegate = self
         NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
         

@@ -1,0 +1,731 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		726BFA451AC0123100CFC4BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 726BFA441AC0123100CFC4BE /* Images.xcassets */; };
+		726BFA481AC0123100CFC4BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 726BFA461AC0123100CFC4BE /* Main.storyboard */; };
+		726BFA671AC0124800CFC4BE /* LastFMKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 726BFA661AC0124800CFC4BE /* LastFMKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		726BFA791AC0124800CFC4BE /* LastFMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 726BFA621AC0124800CFC4BE /* LastFMKit.framework */; };
+		726BFA7A1AC0124800CFC4BE /* LastFMKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 726BFA621AC0124800CFC4BE /* LastFMKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		726BFA8C1AC0125800CFC4BE /* PlayersKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 726BFA8B1AC0125800CFC4BE /* PlayersKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		726BFA9E1AC0125800CFC4BE /* PlayersKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 726BFA871AC0125800CFC4BE /* PlayersKit.framework */; };
+		726BFA9F1AC0125800CFC4BE /* PlayersKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 726BFA871AC0125800CFC4BE /* PlayersKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		726BFAAC1AC012AA00CFC4BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFAA81AC012AA00CFC4BE /* AppDelegate.swift */; };
+		726BFAAD1AC012AA00CFC4BE /* StatusItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFAAB1AC012AA00CFC4BE /* StatusItemView.swift */; };
+		726BFAB41AC0130700CFC4BE /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFAB11AC0130700CFC4BE /* APIClient.swift */; };
+		726BFAB51AC0130700CFC4BE /* LastFMClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFAB21AC0130700CFC4BE /* LastFMClient.swift */; };
+		726BFAB61AC0130700CFC4BE /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFAB31AC0130700CFC4BE /* NetworkClient.swift */; };
+		726BFABD1AC0130D00CFC4BE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFAB71AC0130D00CFC4BE /* Extensions.swift */; };
+		726BFABE1AC0130D00CFC4BE /* PlayersAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFAB81AC0130D00CFC4BE /* PlayersAgent.swift */; };
+		726BFABF1AC0130D00CFC4BE /* iTunes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFABA1AC0130D00CFC4BE /* iTunes.swift */; };
+		726BFAC01AC0130D00CFC4BE /* Rdio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFABB1AC0130D00CFC4BE /* Rdio.swift */; };
+		726BFAC11AC0130D00CFC4BE /* Spotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFABC1AC0130D00CFC4BE /* Spotify.swift */; };
+		726BFAC81AC0132500CFC4BE /* BasePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFAC31AC0132500CFC4BE /* BasePlayer.swift */; };
+		726BFAC91AC0132500CFC4BE /* iTunesPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFAC41AC0132500CFC4BE /* iTunesPlayer.swift */; };
+		726BFACA1AC0132500CFC4BE /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFAC51AC0132500CFC4BE /* Player.swift */; };
+		726BFACB1AC0132500CFC4BE /* RdioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFAC61AC0132500CFC4BE /* RdioPlayer.swift */; };
+		726BFACC1AC0132500CFC4BE /* SpotifyPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFAC71AC0132500CFC4BE /* SpotifyPlayer.swift */; };
+		726BFACD1AC0133500CFC4BE /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 726BFAAF1AC012DD00CFC4BE /* SwiftyJSON.framework */; };
+		726BFACF1AC0134A00CFC4BE /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 726BFAAF1AC012DD00CFC4BE /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		726BFA771AC0124800CFC4BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 726BFA331AC0123100CFC4BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 726BFA611AC0124800CFC4BE;
+			remoteInfo = LastFMKit;
+		};
+		726BFA9C1AC0125800CFC4BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 726BFA331AC0123100CFC4BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 726BFA861AC0125800CFC4BE;
+			remoteInfo = PlayersKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		726BFA7E1AC0124800CFC4BE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				726BFA9F1AC0125800CFC4BE /* PlayersKit.framework in Embed Frameworks */,
+				726BFA7A1AC0124800CFC4BE /* LastFMKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		726BFACE1AC0134400CFC4BE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				726BFACF1AC0134A00CFC4BE /* SwiftyJSON.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		726BFA3B1AC0123100CFC4BE /* Emcee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emcee.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		726BFA3F1AC0123100CFC4BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		726BFA441AC0123100CFC4BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		726BFA471AC0123100CFC4BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		726BFA621AC0124800CFC4BE /* LastFMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LastFMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		726BFA651AC0124800CFC4BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		726BFA661AC0124800CFC4BE /* LastFMKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LastFMKit.h; sourceTree = "<group>"; };
+		726BFA871AC0125800CFC4BE /* PlayersKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PlayersKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		726BFA8A1AC0125800CFC4BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		726BFA8B1AC0125800CFC4BE /* PlayersKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayersKit.h; sourceTree = "<group>"; };
+		726BFAA81AC012AA00CFC4BE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		726BFAAB1AC012AA00CFC4BE /* StatusItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusItemView.swift; sourceTree = "<group>"; };
+		726BFAAF1AC012DD00CFC4BE /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
+		726BFAB11AC0130700CFC4BE /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		726BFAB21AC0130700CFC4BE /* LastFMClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastFMClient.swift; sourceTree = "<group>"; };
+		726BFAB31AC0130700CFC4BE /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		726BFAB71AC0130D00CFC4BE /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		726BFAB81AC0130D00CFC4BE /* PlayersAgent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersAgent.swift; sourceTree = "<group>"; };
+		726BFABA1AC0130D00CFC4BE /* iTunes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunes.swift; sourceTree = "<group>"; };
+		726BFABB1AC0130D00CFC4BE /* Rdio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rdio.swift; sourceTree = "<group>"; };
+		726BFABC1AC0130D00CFC4BE /* Spotify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spotify.swift; sourceTree = "<group>"; };
+		726BFAC31AC0132500CFC4BE /* BasePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePlayer.swift; sourceTree = "<group>"; };
+		726BFAC41AC0132500CFC4BE /* iTunesPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesPlayer.swift; sourceTree = "<group>"; };
+		726BFAC51AC0132500CFC4BE /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		726BFAC61AC0132500CFC4BE /* RdioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RdioPlayer.swift; sourceTree = "<group>"; };
+		726BFAC71AC0132500CFC4BE /* SpotifyPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyPlayer.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		726BFA381AC0123100CFC4BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				726BFA9E1AC0125800CFC4BE /* PlayersKit.framework in Frameworks */,
+				726BFA791AC0124800CFC4BE /* LastFMKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		726BFA5E1AC0124800CFC4BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				726BFACD1AC0133500CFC4BE /* SwiftyJSON.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		726BFA831AC0125800CFC4BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		726BFA321AC0123100CFC4BE = {
+			isa = PBXGroup;
+			children = (
+				726BFA3D1AC0123100CFC4BE /* Emcee */,
+				726BFA631AC0124800CFC4BE /* LastFMKit */,
+				726BFA881AC0125800CFC4BE /* PlayersKit */,
+				726BFAAE1AC012D100CFC4BE /* Frameworks */,
+				726BFA3C1AC0123100CFC4BE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		726BFA3C1AC0123100CFC4BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				726BFA3B1AC0123100CFC4BE /* Emcee.app */,
+				726BFA621AC0124800CFC4BE /* LastFMKit.framework */,
+				726BFA871AC0125800CFC4BE /* PlayersKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		726BFA3D1AC0123100CFC4BE /* Emcee */ = {
+			isa = PBXGroup;
+			children = (
+				726BFA461AC0123100CFC4BE /* Main.storyboard */,
+				726BFA441AC0123100CFC4BE /* Images.xcassets */,
+				726BFAA61AC012AA00CFC4BE /* Source */,
+				726BFA3E1AC0123100CFC4BE /* Supporting Files */,
+			);
+			path = Emcee;
+			sourceTree = "<group>";
+		};
+		726BFA3E1AC0123100CFC4BE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				726BFA3F1AC0123100CFC4BE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		726BFA631AC0124800CFC4BE /* LastFMKit */ = {
+			isa = PBXGroup;
+			children = (
+				726BFAB11AC0130700CFC4BE /* APIClient.swift */,
+				726BFAB21AC0130700CFC4BE /* LastFMClient.swift */,
+				726BFAB31AC0130700CFC4BE /* NetworkClient.swift */,
+				726BFA661AC0124800CFC4BE /* LastFMKit.h */,
+				726BFA641AC0124800CFC4BE /* Supporting Files */,
+			);
+			path = LastFMKit;
+			sourceTree = "<group>";
+		};
+		726BFA641AC0124800CFC4BE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				726BFA651AC0124800CFC4BE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		726BFA881AC0125800CFC4BE /* PlayersKit */ = {
+			isa = PBXGroup;
+			children = (
+				726BFAC21AC0132500CFC4BE /* Players */,
+				726BFAB91AC0130D00CFC4BE /* ScriptingBridge */,
+				726BFAB71AC0130D00CFC4BE /* Extensions.swift */,
+				726BFAB81AC0130D00CFC4BE /* PlayersAgent.swift */,
+				726BFA8B1AC0125800CFC4BE /* PlayersKit.h */,
+				726BFA891AC0125800CFC4BE /* Supporting Files */,
+			);
+			path = PlayersKit;
+			sourceTree = "<group>";
+		};
+		726BFA891AC0125800CFC4BE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				726BFA8A1AC0125800CFC4BE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		726BFAA61AC012AA00CFC4BE /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				726BFAA71AC012AA00CFC4BE /* Application */,
+				726BFAA91AC012AA00CFC4BE /* View controllers */,
+				726BFAAA1AC012AA00CFC4BE /* Views */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		726BFAA71AC012AA00CFC4BE /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				726BFAA81AC012AA00CFC4BE /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		726BFAA91AC012AA00CFC4BE /* View controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View controllers";
+			sourceTree = "<group>";
+		};
+		726BFAAA1AC012AA00CFC4BE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				726BFAAB1AC012AA00CFC4BE /* StatusItemView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		726BFAAE1AC012D100CFC4BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				726BFAAF1AC012DD00CFC4BE /* SwiftyJSON.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		726BFAB91AC0130D00CFC4BE /* ScriptingBridge */ = {
+			isa = PBXGroup;
+			children = (
+				726BFABA1AC0130D00CFC4BE /* iTunes.swift */,
+				726BFABB1AC0130D00CFC4BE /* Rdio.swift */,
+				726BFABC1AC0130D00CFC4BE /* Spotify.swift */,
+			);
+			path = ScriptingBridge;
+			sourceTree = "<group>";
+		};
+		726BFAC21AC0132500CFC4BE /* Players */ = {
+			isa = PBXGroup;
+			children = (
+				726BFAC31AC0132500CFC4BE /* BasePlayer.swift */,
+				726BFAC41AC0132500CFC4BE /* iTunesPlayer.swift */,
+				726BFAC51AC0132500CFC4BE /* Player.swift */,
+				726BFAC61AC0132500CFC4BE /* RdioPlayer.swift */,
+				726BFAC71AC0132500CFC4BE /* SpotifyPlayer.swift */,
+			);
+			path = Players;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		726BFA5F1AC0124800CFC4BE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				726BFA671AC0124800CFC4BE /* LastFMKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		726BFA841AC0125800CFC4BE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				726BFA8C1AC0125800CFC4BE /* PlayersKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		726BFA3A1AC0123100CFC4BE /* Emcee */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 726BFA571AC0123100CFC4BE /* Build configuration list for PBXNativeTarget "Emcee" */;
+			buildPhases = (
+				726BFA371AC0123100CFC4BE /* Sources */,
+				726BFA381AC0123100CFC4BE /* Frameworks */,
+				726BFA391AC0123100CFC4BE /* Resources */,
+				726BFA7E1AC0124800CFC4BE /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				726BFA781AC0124800CFC4BE /* PBXTargetDependency */,
+				726BFA9D1AC0125800CFC4BE /* PBXTargetDependency */,
+			);
+			name = Emcee;
+			productName = Emcee;
+			productReference = 726BFA3B1AC0123100CFC4BE /* Emcee.app */;
+			productType = "com.apple.product-type.application";
+		};
+		726BFA611AC0124800CFC4BE /* LastFMKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 726BFA7B1AC0124800CFC4BE /* Build configuration list for PBXNativeTarget "LastFMKit" */;
+			buildPhases = (
+				726BFA5D1AC0124800CFC4BE /* Sources */,
+				726BFA5E1AC0124800CFC4BE /* Frameworks */,
+				726BFA5F1AC0124800CFC4BE /* Headers */,
+				726BFA601AC0124800CFC4BE /* Resources */,
+				726BFACE1AC0134400CFC4BE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LastFMKit;
+			productName = LastFMKit;
+			productReference = 726BFA621AC0124800CFC4BE /* LastFMKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		726BFA861AC0125800CFC4BE /* PlayersKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 726BFAA01AC0125800CFC4BE /* Build configuration list for PBXNativeTarget "PlayersKit" */;
+			buildPhases = (
+				726BFA821AC0125800CFC4BE /* Sources */,
+				726BFA831AC0125800CFC4BE /* Frameworks */,
+				726BFA841AC0125800CFC4BE /* Headers */,
+				726BFA851AC0125800CFC4BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlayersKit;
+			productName = PlayersKit;
+			productReference = 726BFA871AC0125800CFC4BE /* PlayersKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		726BFA331AC0123100CFC4BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = SimonBS;
+				TargetAttributes = {
+					726BFA3A1AC0123100CFC4BE = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					726BFA611AC0124800CFC4BE = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					726BFA861AC0125800CFC4BE = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = 726BFA361AC0123100CFC4BE /* Build configuration list for PBXProject "Emcee" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 726BFA321AC0123100CFC4BE;
+			productRefGroup = 726BFA3C1AC0123100CFC4BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				726BFA3A1AC0123100CFC4BE /* Emcee */,
+				726BFA611AC0124800CFC4BE /* LastFMKit */,
+				726BFA861AC0125800CFC4BE /* PlayersKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		726BFA391AC0123100CFC4BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				726BFA451AC0123100CFC4BE /* Images.xcassets in Resources */,
+				726BFA481AC0123100CFC4BE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		726BFA601AC0124800CFC4BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		726BFA851AC0125800CFC4BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		726BFA371AC0123100CFC4BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				726BFAAC1AC012AA00CFC4BE /* AppDelegate.swift in Sources */,
+				726BFAAD1AC012AA00CFC4BE /* StatusItemView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		726BFA5D1AC0124800CFC4BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				726BFAB41AC0130700CFC4BE /* APIClient.swift in Sources */,
+				726BFAB51AC0130700CFC4BE /* LastFMClient.swift in Sources */,
+				726BFAB61AC0130700CFC4BE /* NetworkClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		726BFA821AC0125800CFC4BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				726BFABE1AC0130D00CFC4BE /* PlayersAgent.swift in Sources */,
+				726BFAC91AC0132500CFC4BE /* iTunesPlayer.swift in Sources */,
+				726BFAC11AC0130D00CFC4BE /* Spotify.swift in Sources */,
+				726BFABF1AC0130D00CFC4BE /* iTunes.swift in Sources */,
+				726BFACB1AC0132500CFC4BE /* RdioPlayer.swift in Sources */,
+				726BFACA1AC0132500CFC4BE /* Player.swift in Sources */,
+				726BFAC81AC0132500CFC4BE /* BasePlayer.swift in Sources */,
+				726BFACC1AC0132500CFC4BE /* SpotifyPlayer.swift in Sources */,
+				726BFABD1AC0130D00CFC4BE /* Extensions.swift in Sources */,
+				726BFAC01AC0130D00CFC4BE /* Rdio.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		726BFA781AC0124800CFC4BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 726BFA611AC0124800CFC4BE /* LastFMKit */;
+			targetProxy = 726BFA771AC0124800CFC4BE /* PBXContainerItemProxy */;
+		};
+		726BFA9D1AC0125800CFC4BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 726BFA861AC0125800CFC4BE /* PlayersKit */;
+			targetProxy = 726BFA9C1AC0125800CFC4BE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		726BFA461AC0123100CFC4BE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				726BFA471AC0123100CFC4BE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		726BFA551AC0123100CFC4BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		726BFA561AC0123100CFC4BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		726BFA581AC0123100CFC4BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = Emcee/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		726BFA591AC0123100CFC4BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = Emcee/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		726BFA7C1AC0124800CFC4BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LastFMKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		726BFA7D1AC0124800CFC4BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = LastFMKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		726BFAA11AC0125800CFC4BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PlayersKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		726BFAA21AC0125800CFC4BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = PlayersKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		726BFA361AC0123100CFC4BE /* Build configuration list for PBXProject "Emcee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				726BFA551AC0123100CFC4BE /* Debug */,
+				726BFA561AC0123100CFC4BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		726BFA571AC0123100CFC4BE /* Build configuration list for PBXNativeTarget "Emcee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				726BFA581AC0123100CFC4BE /* Debug */,
+				726BFA591AC0123100CFC4BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		726BFA7B1AC0124800CFC4BE /* Build configuration list for PBXNativeTarget "LastFMKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				726BFA7C1AC0124800CFC4BE /* Debug */,
+				726BFA7D1AC0124800CFC4BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		726BFAA01AC0125800CFC4BE /* Build configuration list for PBXNativeTarget "PlayersKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				726BFAA11AC0125800CFC4BE /* Debug */,
+				726BFAA21AC0125800CFC4BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 726BFA331AC0123100CFC4BE /* Project object */;
+}

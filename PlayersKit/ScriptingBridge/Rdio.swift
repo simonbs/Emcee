@@ -13,7 +13,7 @@ import ScriptingBridge
     optional var album: String { get }
     optional var duration: Int { get }
     optional var name: String { get }
-    optional var artwork: NSData { get }
+    optional var artwork: NSImage { get }
     optional var rdioUrl: String { get }
     optional var key: String { get }
 }

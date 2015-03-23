@@ -47,15 +47,11 @@ public class RdioPlayer: BasePlayer {
                 case RdioEPSSPlaying.value:
                     playbackState = .Playing
                     if let track = rdio.currentTrack {
-                        var artwork: NSImage? = nil
-                        if let artworkData = track.artwork {
-                            artwork = track.artwork != nil ? NSImage(data: artworkData) : nil
-                        }
                         currentTrack = Track(
                             artistName: track.artist!,
                             trackName: track.name!,
                             albumName: track.album!,
-                            artwork: artwork)
+                            artwork: track.artwork)
                     }
                 case RdioEPSSPaused.value:
                     playbackState = .Paused

@@ -10,7 +10,7 @@ import Cocoa
 import PlayersKit
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate, StatusItemViewDelegate, PlayersAgentDelegate, PlayerDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate, StatusItemViewDelegate, PlayersAgentDelegate, PlayerDelegate {
     
     private let statusItemView: StatusItemView
     private let playersAgent = PlayersAgent()
@@ -57,6 +57,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, StatusItemViewDelegate, Play
     func playerDidPlay(player: Player) {
         if let track = player.currentTrack {
             displayTrack(track)
+            notifyTrack(track)
         }
     }
     
@@ -70,6 +71,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, StatusItemViewDelegate, Play
     
     func playerDidChangeTrack(player: Player, track: Track) {
         displayTrack(track)
+        notifyTrack(track)
     }
     
     private func usePlayer(player: Player?) {
@@ -91,5 +93,22 @@ class AppDelegate: NSObject, NSApplicationDelegate, StatusItemViewDelegate, Play
         statusItemView.text = "\(track.artistName) - \(track.trackName)"
     }
     
+    private func notifyTrack(track: Track) {
+        let notification = NSUserNotification()
+        notification.title = track.trackName
+        notification.subtitle = track.albumName
+        notification.informativeText = track.artistName
+        notification.contentImage = track.artwork
+        NSUserNotificationCenter.defaultUserNotificationCenter().delegate = self
+        NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
+        
+        after(6) {
+            NSUserNotificationCenter.defaultUserNotificationCenter().removeAllDeliveredNotifications()
+        }
+    }
+    
+    func userNotificationCenter(center: NSUserNotificationCenter, shouldPresentNotification notification: NSUserNotification) -> Bool {
+        return true
+    }
 }
 

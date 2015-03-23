@@ -3,16 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "statusbar.png"
+      "filename" : "Logo.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "statusbar@2x.png"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "Logo@2x.png"
     }
   ],
   "info" : {

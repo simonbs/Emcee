@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class LastFMClient: APIClient {
+public class LastFMClient {
    
     private let apiKey: String
     private let secret: String
@@ -16,11 +16,7 @@ public class LastFMClient: APIClient {
     public init(apiKey: String, secret: String) {
         self.apiKey = apiKey
         self.secret = secret
-        super.init(baseURL: NSURL(string: "http://ws.audioscrobbler.com/2.0/")!)
-    }
-    
-    public func getToken() {
-        
+        // http://ws.audioscrobbler.com/2.0/
     }
     
 }

@@ -56,7 +56,12 @@ public class iTunesPlayer: BasePlayer {
                 case iTunesEPlSPlaying.value:
                     playbackState = .Playing
                     if let track = iTunes.currentTrack {
-                        currentTrack = Track(artistName: track.artist!, trackName: track.name!)
+                        let artwork = track.artworks().firstObject as? NSImage
+                        currentTrack = Track(
+                            artistName: track.artist!,
+                            trackName: track.name!,
+                            albumName: track.album!,
+                            artwork: artwork)
                     }
                 default:
                     break

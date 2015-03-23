@@ -11,6 +11,8 @@ import Foundation
 public struct Track: Equatable {
     public let artistName: String
     public let trackName: String
+    public let albumName: String
+    public let artwork: NSImage?
 }
 
 public func ==(lhs: Track, rhs: Track) -> Bool {

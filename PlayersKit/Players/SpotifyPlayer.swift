@@ -8,6 +8,8 @@
 
 import Foundation
 import ScriptingBridge
+import SwiftyJSON
+import Alamofire
 
 public class SpotifyPlayer: BasePlayer {
    
@@ -16,7 +18,8 @@ public class SpotifyPlayer: BasePlayer {
     
     private let playbackStateChangedNotification = "com.spotify.client.PlaybackStateChanged"
     private let spotify: SpotifyApplication = SBApplication(bundleIdentifier: SpotifyPlayer.bundleIdentifier)
-
+    private var artworkTask: NSURLSessionDataTask?
+    
     override public func start() {
         if !isStarted {
             let notificationCenter = NSDistributedNotificationCenter.defaultCenter()
@@ -46,8 +49,8 @@ public class SpotifyPlayer: BasePlayer {
                 switch playerState.value {
                 case SpotifyEPlSPlaying.value:
                     playbackState = .Playing
-                    if let spotifyTrack = spotify.currentTrack {
-                        currentTrack = Track(artistName: spotifyTrack.artist!, trackName: spotifyTrack.name!)
+                    if let track = spotify.currentTrack {
+                        setTrackFromSpotifyTrack(track)
                     }
                 case SpotifyEPlSPaused.value:
                     playbackState = .Paused
@@ -59,6 +62,37 @@ public class SpotifyPlayer: BasePlayer {
                 }
             }
         }
+    }
+    
+    private func setTrackFromSpotifyTrack(track: SpotifyTrack) {
+        if let artworkTask = artworkTask {
+            artworkTask.cancel()
+        }
+        
+        if let trackId = track.id?() {
+            let url = "https://embed.spotify.com/oembed/"
+            let params = [ "url": trackId ]
+            Alamofire.request(.GET, url, parameters: params, encoding: .URL).responseJSON { (request, response, jsonResponse, error) in
+                if let jsonResponse: AnyObject = jsonResponse {
+                    let json = JSON(jsonResponse)
+                    if let artworkUrl = json["thumbnail_url"].URL {
+                        self.setCurrentTrack(track, artwork: NSImage(contentsOfURL: artworkUrl))
+                    }
+                } else {
+                    self.setCurrentTrack(track)
+                }
+            }
+        } else {
+            setCurrentTrack(track)
+        }
+    }
+    
+    private func setCurrentTrack(track: SpotifyTrack, artwork: NSImage? = nil) {
+        currentTrack = Track(
+            artistName: track.artist!,
+            trackName: track.name!,
+            albumName: track.album!,
+            artwork: artwork)
     }
     
 }

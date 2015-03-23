@@ -17,12 +17,16 @@ import ScriptingBridge
     optional var albumArtist: String { get }
     optional var artist: String { get }
     optional var podcast: Bool { get }
-    func artworks() -> SBElementArray
+    func artworks() -> NSArray
 }
 
-@objc protocol iTunesArtwork: iTunesItem {
-    optional var data: NSImage { get }
+@objc protocol iTunesArtwork {
+    optional var data: NSImage { get set }
+    optional var objectDescription: String { get set }
+    optional var downloaded: Bool { get }
     optional var format: NSNumber { get }
+    optional var kind: Int { get set }
+    optional var rawData: NSData { get set }
 }
 
 @objc protocol iTunesApplication {

@@ -80,10 +80,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     
     func playerDidPause(player: Player) {
         statusItemView.text = nil
+        clearNotificationCenter()
     }
     
     func playerDidStop(player: Player) {
         statusItemView.text = nil
+        clearNotificationCenter()
     }
     
     func playerDidChangeTrack(player: Player, track: Track) {
@@ -126,7 +128,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         clearNotificationCenterTimer = NSTimer.scheduledTimerWithTimeInterval(7, target: self, selector: Selector("clearNotificationCenter:"), userInfo: nil, repeats: false)
     }
     
-    func clearNotificationCenter(sender: AnyObject) {
+    func clearNotificationCenter(sender: AnyObject? = nil) {
         NSUserNotificationCenter.defaultUserNotificationCenter().removeAllDeliveredNotifications()
     }
     

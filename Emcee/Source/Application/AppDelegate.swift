@@ -33,8 +33,16 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     }
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        let lastFMClient = LastFMClient(apiKey: lastFMAPIKey, secret: lastFMSecret)
-        lastFMClient.authorize()
+        let lastFMClient = LastFMKit.Client(apiKey: lastFMAPIKey, secret: lastFMSecret)
+        lastFMClient.authorize { success, error in
+            if let error = error {
+                NSLog("Could not authorize: \(error)")
+            } else if !success {
+                NSLog("Could not authorize but got no error")
+            } else {
+                NSLog("Successfully authorized!")
+            }
+        }
         
         let notificationCenter = NSDistributedNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self, selector: Selector("interfaceThemeChanged:"), name: themeChangedNotification, object: nil)
@@ -53,6 +61,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         }
         
         return false
+    }
+    
+    func statusItemViewClicked(view: StatusItemView) {
+
     }
     
     func statusItemViewRightClicked(view: StatusItemView) {

@@ -8,14 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		726BFA451AC0123100CFC4BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 726BFA441AC0123100CFC4BE /* Images.xcassets */; };
-		726BFA481AC0123100CFC4BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 726BFA461AC0123100CFC4BE /* Main.storyboard */; };
 		726BFA671AC0124800CFC4BE /* LastFMKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 726BFA661AC0124800CFC4BE /* LastFMKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		726BFA8C1AC0125800CFC4BE /* PlayersKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 726BFA8B1AC0125800CFC4BE /* PlayersKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		726BFA9E1AC0125800CFC4BE /* PlayersKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 726BFA871AC0125800CFC4BE /* PlayersKit.framework */; };
 		726BFA9F1AC0125800CFC4BE /* PlayersKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 726BFA871AC0125800CFC4BE /* PlayersKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		726BFAAC1AC012AA00CFC4BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFAA81AC012AA00CFC4BE /* AppDelegate.swift */; };
 		726BFAAD1AC012AA00CFC4BE /* StatusItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFAAB1AC012AA00CFC4BE /* StatusItemView.swift */; };
-		726BFAB51AC0130700CFC4BE /* LastFMClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFAB21AC0130700CFC4BE /* LastFMClient.swift */; };
+		726BFAB51AC0130700CFC4BE /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFAB21AC0130700CFC4BE /* Client.swift */; };
 		726BFABD1AC0130D00CFC4BE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFAB71AC0130D00CFC4BE /* Extensions.swift */; };
 		726BFABE1AC0130D00CFC4BE /* PlayersAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFAB81AC0130D00CFC4BE /* PlayersAgent.swift */; };
 		726BFABF1AC0130D00CFC4BE /* iTunes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFABA1AC0130D00CFC4BE /* iTunes.swift */; };
@@ -35,6 +34,10 @@
 		72DA7DC31AC09B9B0018C83C /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72DA7DBD1AC098600018C83C /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		72DA7DC41AC09B9D0018C83C /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72AF3B831AC030FA0018DC12 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		72DA7DC51AC09BAC0018C83C /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72D09C3E1AC0336400913968 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		72DA7DC71AC0A8C60018C83C /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA7DC61AC0A8C60018C83C /* Error.swift */; };
+		72DA7DCB1AC0AED80018C83C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA7DCA1AC0AED80018C83C /* Endpoint.swift */; };
+		72DA7DCD1AC0B6130018C83C /* LastFMExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA7DCC1AC0B6130018C83C /* LastFMExtensions.swift */; };
+		72DA7DD01AC0BCE80018C83C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72DA7DCE1AC0BCE80018C83C /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,7 +90,6 @@
 		726BFA3B1AC0123100CFC4BE /* Emcee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emcee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		726BFA3F1AC0123100CFC4BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		726BFA441AC0123100CFC4BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		726BFA471AC0123100CFC4BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		726BFA621AC0124800CFC4BE /* LastFMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LastFMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		726BFA651AC0124800CFC4BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		726BFA661AC0124800CFC4BE /* LastFMKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LastFMKit.h; sourceTree = "<group>"; };
@@ -96,7 +98,7 @@
 		726BFA8B1AC0125800CFC4BE /* PlayersKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayersKit.h; sourceTree = "<group>"; };
 		726BFAA81AC012AA00CFC4BE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		726BFAAB1AC012AA00CFC4BE /* StatusItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusItemView.swift; sourceTree = "<group>"; };
-		726BFAB21AC0130700CFC4BE /* LastFMClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastFMClient.swift; sourceTree = "<group>"; };
+		726BFAB21AC0130700CFC4BE /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		726BFAB71AC0130D00CFC4BE /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		726BFAB81AC0130D00CFC4BE /* PlayersAgent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersAgent.swift; sourceTree = "<group>"; };
 		726BFABA1AC0130D00CFC4BE /* iTunes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunes.swift; sourceTree = "<group>"; };
@@ -110,6 +112,10 @@
 		72AF3B831AC030FA0018DC12 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 		72D09C3E1AC0336400913968 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
 		72DA7DBD1AC098600018C83C /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
+		72DA7DC61AC0A8C60018C83C /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		72DA7DCA1AC0AED80018C83C /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		72DA7DCC1AC0B6130018C83C /* LastFMExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastFMExtensions.swift; sourceTree = SOURCE_ROOT; };
+		72DA7DCF1AC0BCE80018C83C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +173,7 @@
 		726BFA3D1AC0123100CFC4BE /* Emcee */ = {
 			isa = PBXGroup;
 			children = (
-				726BFA461AC0123100CFC4BE /* Main.storyboard */,
+				72DA7DCE1AC0BCE80018C83C /* MainMenu.xib */,
 				726BFA441AC0123100CFC4BE /* Images.xcassets */,
 				726BFAA61AC012AA00CFC4BE /* Source */,
 				726BFA3E1AC0123100CFC4BE /* Supporting Files */,
@@ -186,7 +192,9 @@
 		726BFA631AC0124800CFC4BE /* LastFMKit */ = {
 			isa = PBXGroup;
 			children = (
-				726BFAB21AC0130700CFC4BE /* LastFMClient.swift */,
+				726BFAB21AC0130700CFC4BE /* Client.swift */,
+				72DA7DC61AC0A8C60018C83C /* Error.swift */,
+				72DA7DCA1AC0AED80018C83C /* Endpoint.swift */,
 				726BFA661AC0124800CFC4BE /* LastFMKit.h */,
 				726BFA641AC0124800CFC4BE /* Supporting Files */,
 			);
@@ -291,6 +299,7 @@
 		72D09C431AC0365400913968 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				72DA7DCC1AC0B6130018C83C /* LastFMExtensions.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -420,7 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				726BFA451AC0123100CFC4BE /* Images.xcassets in Resources */,
-				726BFA481AC0123100CFC4BE /* Main.storyboard in Resources */,
+				72DA7DD01AC0BCE80018C83C /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +454,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72DA7DCD1AC0B6130018C83C /* LastFMExtensions.swift in Sources */,
 				726BFAAC1AC012AA00CFC4BE /* AppDelegate.swift in Sources */,
 				726BFAAD1AC012AA00CFC4BE /* StatusItemView.swift in Sources */,
 			);
@@ -454,7 +464,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				726BFAB51AC0130700CFC4BE /* LastFMClient.swift in Sources */,
+				726BFAB51AC0130700CFC4BE /* Client.swift in Sources */,
+				72DA7DCB1AC0AED80018C83C /* Endpoint.swift in Sources */,
+				72DA7DC71AC0A8C60018C83C /* Error.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,12 +498,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		726BFA461AC0123100CFC4BE /* Main.storyboard */ = {
+		72DA7DCE1AC0BCE80018C83C /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				726BFA471AC0123100CFC4BE /* Base */,
+				72DA7DCF1AC0BCE80018C83C /* Base */,
 			);
-			name = Main.storyboard;
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

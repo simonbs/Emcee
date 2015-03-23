@@ -18,7 +18,7 @@ public class SpotifyPlayer: BasePlayer {
     
     private let playbackStateChangedNotification = "com.spotify.client.PlaybackStateChanged"
     private let spotify: SpotifyApplication = SBApplication(bundleIdentifier: SpotifyPlayer.bundleIdentifier)
-    private var artworkTask: NSURLSessionDataTask?
+    private var artworkRequest: Request?
     
     override public func start() {
         if !isStarted {
@@ -65,14 +65,14 @@ public class SpotifyPlayer: BasePlayer {
     }
     
     private func setTrackFromSpotifyTrack(track: SpotifyTrack) {
-        if let artworkTask = artworkTask {
-            artworkTask.cancel()
+        if let artworkRequest = artworkRequest {
+            artworkRequest.cancel()
         }
         
         if let trackId = track.id?() {
             let url = "https://embed.spotify.com/oembed/"
             let params = [ "url": trackId ]
-            Alamofire.request(.GET, url, parameters: params, encoding: .URL).responseJSON { (request, response, jsonResponse, error) in
+            artworkRequest = Alamofire.request(.GET, url, parameters: params, encoding: .URL).responseJSON { (request, response, jsonResponse, error) in
                 if let jsonResponse: AnyObject = jsonResponse {
                     let json = JSON(jsonResponse)
                     if let artworkUrl = json["thumbnail_url"].URL {

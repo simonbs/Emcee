@@ -75,21 +75,3 @@ class PanelBackgroundView: NSView {
     }
     
 }
-
-/*
-
-[[NSColor colorWithDeviceWhite:1 alpha:FILL_OPACITY] setFill];
-[path fill];
-
-[NSGraphicsContext saveGraphicsState];
-
-NSBezierPath *clip = [NSBezierPath bezierPathWithRect:[self bounds]];
-[clip appendBezierPath:path];
-[clip addClip];
-
-[path setLineWidth:LINE_THICKNESS * 2];
-[[NSColor whiteColor] setStroke];
-[path stroke];
-
-[NSGraphicsContext restoreGraphicsState];
-*/

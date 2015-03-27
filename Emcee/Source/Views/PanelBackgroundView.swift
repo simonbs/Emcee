@@ -58,7 +58,7 @@ class PanelBackgroundView: NSView {
         path.lineToPoint(NSMakePoint(arrowX - arrowSize.width / 2, contentRect.maxY - arrowSize.height))
         path.closePath()
         
-        NSColor(deviceWhite: 1, alpha: 0.90).setFill()
+        NSColor(deviceWhite: 1, alpha: 0.98).setFill()
         path.fill()
         
         NSGraphicsContext.saveGraphicsState()

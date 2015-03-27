@@ -21,7 +21,7 @@ import Cocoa
 class PanelBackgroundView: NSView {
     
     private let lineThickness: CGFloat = 1
-    private let arrowSize = CGSizeMake(12, 8)
+    private let arrowSize = CGSizeMake(18, 10)
     private let cornerRadius: CGFloat = 5
     
     internal var arrowX: CGFloat = 0 {

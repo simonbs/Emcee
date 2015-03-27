@@ -11,8 +11,9 @@
 		721B67411AC5B3C900A10B75 /* Panel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 721B673F1AC5B3C900A10B75 /* Panel.xib */; };
 		721B67441AC5C13600A10B75 /* PanelBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721B67431AC5C13600A10B75 /* PanelBackgroundView.swift */; };
 		721B67481AC5C68D00A10B75 /* PlayingPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721B67471AC5C68D00A10B75 /* PlayingPanelController.swift */; };
+		721B67541AC5CDC700A10B75 /* LastFMExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721B67511AC5CDC700A10B75 /* LastFMExtensions.swift */; };
+		721B67551AC5CDC700A10B75 /* TopLevelFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721B67521AC5CDC700A10B75 /* TopLevelFunctions.swift */; };
 		72458A9E1AC5A98700F41B0B /* PanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72458A9D1AC5A98700F41B0B /* PanelController.swift */; };
-		72458AA01AC5AF1E00F41B0B /* TopLevelFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72458A9F1AC5AF1E00F41B0B /* TopLevelFunctions.swift */; };
 		726BFA451AC0123100CFC4BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 726BFA441AC0123100CFC4BE /* Images.xcassets */; };
 		726BFA671AC0124800CFC4BE /* LastFMKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 726BFA661AC0124800CFC4BE /* LastFMKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		726BFA8C1AC0125800CFC4BE /* PlayersKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 726BFA8B1AC0125800CFC4BE /* PlayersKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -42,7 +43,6 @@
 		72DA7DC51AC09BAC0018C83C /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72D09C3E1AC0336400913968 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		72DA7DC71AC0A8C60018C83C /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA7DC61AC0A8C60018C83C /* Error.swift */; };
 		72DA7DCB1AC0AED80018C83C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA7DCA1AC0AED80018C83C /* Endpoint.swift */; };
-		72DA7DCD1AC0B6130018C83C /* LastFMExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA7DCC1AC0B6130018C83C /* LastFMExtensions.swift */; };
 		72DA7DD01AC0BCE80018C83C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72DA7DCE1AC0BCE80018C83C /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
@@ -97,8 +97,9 @@
 		721B67401AC5B3C900A10B75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Panel.xib; sourceTree = "<group>"; };
 		721B67431AC5C13600A10B75 /* PanelBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelBackgroundView.swift; sourceTree = "<group>"; };
 		721B67471AC5C68D00A10B75 /* PlayingPanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingPanelController.swift; sourceTree = "<group>"; };
+		721B67511AC5CDC700A10B75 /* LastFMExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastFMExtensions.swift; sourceTree = "<group>"; };
+		721B67521AC5CDC700A10B75 /* TopLevelFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopLevelFunctions.swift; sourceTree = "<group>"; };
 		72458A9D1AC5A98700F41B0B /* PanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelController.swift; sourceTree = "<group>"; };
-		72458A9F1AC5AF1E00F41B0B /* TopLevelFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopLevelFunctions.swift; sourceTree = SOURCE_ROOT; };
 		726BFA3B1AC0123100CFC4BE /* Emcee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emcee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		726BFA3F1AC0123100CFC4BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		726BFA441AC0123100CFC4BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -126,7 +127,6 @@
 		72DA7DBD1AC098600018C83C /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
 		72DA7DC61AC0A8C60018C83C /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		72DA7DCA1AC0AED80018C83C /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		72DA7DCC1AC0B6130018C83C /* LastFMExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastFMExtensions.swift; sourceTree = SOURCE_ROOT; };
 		72DA7DCF1AC0BCE80018C83C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,6 +168,15 @@
 				72DA7DCE1AC0BCE80018C83C /* MainMenu.xib */,
 			);
 			name = "User interface";
+			sourceTree = "<group>";
+		};
+		721B674F1AC5CDC700A10B75 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				721B67511AC5CDC700A10B75 /* LastFMExtensions.swift */,
+				721B67521AC5CDC700A10B75 /* TopLevelFunctions.swift */,
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 		72458A9C1AC5A97A00F41B0B /* Controllers */ = {
@@ -266,7 +275,7 @@
 				726BFAA71AC012AA00CFC4BE /* Application */,
 				72458A9C1AC5A97A00F41B0B /* Controllers */,
 				726BFAAA1AC012AA00CFC4BE /* Views */,
-				72D09C431AC0365400913968 /* Library */,
+				721B674F1AC5CDC700A10B75 /* Library */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -319,15 +328,6 @@
 				726BFAC71AC0132500CFC4BE /* SpotifyPlayer.swift */,
 			);
 			path = Players;
-			sourceTree = "<group>";
-		};
-		72D09C431AC0365400913968 /* Library */ = {
-			isa = PBXGroup;
-			children = (
-				72DA7DCC1AC0B6130018C83C /* LastFMExtensions.swift */,
-				72458A9F1AC5AF1E00F41B0B /* TopLevelFunctions.swift */,
-			);
-			path = Library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -481,11 +481,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72458AA01AC5AF1E00F41B0B /* TopLevelFunctions.swift in Sources */,
+				721B67551AC5CDC700A10B75 /* TopLevelFunctions.swift in Sources */,
+				721B67541AC5CDC700A10B75 /* LastFMExtensions.swift in Sources */,
 				72458A9E1AC5A98700F41B0B /* PanelController.swift in Sources */,
 				721B67441AC5C13600A10B75 /* PanelBackgroundView.swift in Sources */,
 				721B673E1AC5B26500A10B75 /* Panel.swift in Sources */,
-				72DA7DCD1AC0B6130018C83C /* LastFMExtensions.swift in Sources */,
 				726BFAAC1AC012AA00CFC4BE /* AppDelegate.swift in Sources */,
 				726BFAAD1AC012AA00CFC4BE /* StatusItemView.swift in Sources */,
 				721B67481AC5C68D00A10B75 /* PlayingPanelController.swift in Sources */,

@@ -18,9 +18,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     private var activePlayer: Player?
     private var clearNotificationCenterTimer: NSTimer?
     private let themeChangedNotification = "AppleInterfaceThemeChangedNotification"
-    private let lastFMAPIKey = "01b8faa134fd09c93bb5a64c83516b20"
-    private let lastFMSecret = "c5db3db17beb4fce4b568bf10aac6ee1"
     private let panelController: PlayingPanelController
+    internal let lastFMClient = LastFMKit.Client(apiKey: "01b8faa134fd09c93bb5a64c83516b20", secret: "c5db3db17beb4fce4b568bf10aac6ee1")
     
     override init() {
         let statusBar = NSStatusBar.systemStatusBar();
@@ -36,17 +35,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     }
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        let lastFMClient = LastFMKit.Client(apiKey: lastFMAPIKey, secret: lastFMSecret)
-        lastFMClient.authorize { success, error in
-            if let error = error {
-                NSLog("Could not authorize: \(error)")
-            } else if !success {
-                NSLog("Could not authorize but got no error")
-            } else {
-                NSLog("Successfully authorized!")
-            }
-        }
-        
         let notificationCenter = NSDistributedNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self, selector: Selector("interfaceThemeChanged:"), name: themeChangedNotification, object: nil)
         usePlayer(playersAgent.runningPlayers.first)

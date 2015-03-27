@@ -33,71 +33,30 @@ class PanelBackgroundView: NSView {
 
         let contentRect = NSInsetRect(bounds, lineThickness, lineThickness)
         let path = NSBezierPath()
-        /*
-        NSRect contentRect = NSInsetRect([self bounds], LINE_THICKNESS, LINE_THICKNESS);
-        NSBezierPath *path = [NSBezierPath bezierPath];
-        */
         
         path.moveToPoint(NSMakePoint(arrowX, contentRect.maxY))
         path.lineToPoint(NSMakePoint(arrowX + arrowSize.width / 2, contentRect.maxY - arrowSize.height))
         path.lineToPoint(NSMakePoint(contentRect.maxX - cornerRadius, contentRect.maxY - arrowSize.height))
-        /*
-        [path moveToPoint:NSMakePoint(_arrowX, NSMaxY(contentRect))];
-        [path lineToPoint:NSMakePoint(_arrowX + ARROW_WIDTH / 2, NSMaxY(contentRect) - ARROW_HEIGHT)];
-        [path lineToPoint:NSMakePoint(NSMaxX(contentRect) - CORNER_RADIUS, NSMaxY(contentRect) - ARROW_HEIGHT)];
-        */
         
         let topRightCorner = NSMakePoint(contentRect.maxX, contentRect.maxY - arrowSize.height)
         path.curveToPoint(NSMakePoint(contentRect.maxX, contentRect.maxY - arrowSize.height - cornerRadius), controlPoint1: topRightCorner, controlPoint2: topRightCorner)
-        /*
-        NSPoint topRightCorner = NSMakePoint(NSMaxX(contentRect), NSMaxY(contentRect) - ARROW_HEIGHT);
-        [path curveToPoint:NSMakePoint(NSMaxX(contentRect), NSMaxY(contentRect) - ARROW_HEIGHT - CORNER_RADIUS)
-        controlPoint1:topRightCorner controlPoint2:topRightCorner];
-        */
         
         path.lineToPoint(NSMakePoint(contentRect.maxX, contentRect.minY + cornerRadius))
-        /*
-        [path lineToPoint:NSMakePoint(NSMaxX(contentRect), NSMinY(contentRect) + CORNER_RADIUS)];
-        */
         
         let bottomRightCorner = NSMakePoint(contentRect.maxX, contentRect.minY)
         path.curveToPoint(NSMakePoint(contentRect.maxX - cornerRadius, contentRect.minY), controlPoint1: bottomRightCorner, controlPoint2: bottomRightCorner)
-        /*
-        NSPoint bottomRightCorner = NSMakePoint(NSMaxX(contentRect), NSMinY(contentRect));
-        [path curveToPoint:NSMakePoint(NSMaxX(contentRect) - CORNER_RADIUS, NSMinY(contentRect))
-        controlPoint1:bottomRightCorner controlPoint2:bottomRightCorner];
-        */
-        
+
         path.lineToPoint(NSMakePoint(contentRect.minX + cornerRadius, contentRect.minY))
-        /*
-        [path lineToPoint:NSMakePoint(NSMinX(contentRect) + CORNER_RADIUS, NSMinY(contentRect))];
-        */
         
         path.curveToPoint(NSMakePoint(contentRect.minX, contentRect.minY + cornerRadius), controlPoint1: contentRect.origin, controlPoint2: contentRect.origin)
-        /*
-        [path curveToPoint:NSMakePoint(NSMinX(contentRect), NSMinY(contentRect) + CORNER_RADIUS)
-            controlPoint1:contentRect.origin controlPoint2:contentRect.origin];
-        */
         
         path.lineToPoint(NSMakePoint(contentRect.minX, contentRect.maxY - arrowSize.height - cornerRadius))
-        /*
-        [path lineToPoint:NSMakePoint(NSMinX(contentRect), NSMaxY(contentRect) - ARROW_HEIGHT - CORNER_RADIUS)];
-        */
         
         let topLeftCorner = NSMakePoint(contentRect.minX, contentRect.maxY - arrowSize.height)
         path.curveToPoint(NSMakePoint(contentRect.minX + cornerRadius, contentRect.maxY - arrowSize.height), controlPoint1: topLeftCorner, controlPoint2: topLeftCorner)
-        /*
-        NSPoint topLeftCorner = NSMakePoint(NSMinX(contentRect), NSMaxY(contentRect) - ARROW_HEIGHT);
-        [path curveToPoint:NSMakePoint(NSMinX(contentRect) + CORNER_RADIUS, NSMaxY(contentRect) - ARROW_HEIGHT)
-        controlPoint1:topLeftCorner controlPoint2:topLeftCorner];
-        */
         
         path.lineToPoint(NSMakePoint(arrowX - arrowSize.width / 2, contentRect.maxY - arrowSize.height))
         path.closePath()
-        /*
-        [path lineToPoint:NSMakePoint(_arrowX - ARROW_WIDTH / 2, NSMaxY(contentRect) - ARROW_HEIGHT)];
-        [path closePath];
-        */
         
         NSColor(deviceWhite: 1, alpha: 0.90).setFill()
         path.fill()

@@ -11,7 +11,7 @@ import PlayersKit
 import LastFMKit
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate, StatusItemViewDelegate, PlayersAgentDelegate, PlayerDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate, StatusItemViewDelegate, PlayersAgentDelegate, PlayerDelegate, PanelControllerDelegate {
     
     private let statusItemView: StatusItemView
     private let playersAgent = PlayersAgent()
@@ -20,16 +20,20 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     private let themeChangedNotification = "AppleInterfaceThemeChangedNotification"
     private let lastFMAPIKey = "01b8faa134fd09c93bb5a64c83516b20"
     private let lastFMSecret = "c5db3db17beb4fce4b568bf10aac6ee1"
+    private let panelController: PanelController
+    
     
     override init() {
         let statusBar = NSStatusBar.systemStatusBar();
         let length: CGFloat = -1 // NSVariableStatusItemLength
         let item = statusBar.statusItemWithLength(length);
         statusItemView = StatusItemView(item: item)
+        panelController = PanelController(windowNibName: "Panel")
         super.init()
         statusItemView.style = isStatusBarDark() ? .Light : .Dark
         playersAgent.delegate = self
         statusItemView.delegate = self
+        panelController.delegate = self
     }
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
@@ -64,7 +68,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     }
     
     func statusItemViewClicked(view: StatusItemView) {
-
+        if panelController.visible {
+            panelController.closePanel(animated: true)
+        } else {
+            panelController.openPanel()
+        }
     }
     
     func statusItemViewRightClicked(view: StatusItemView) {
@@ -157,6 +165,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     
     func userNotificationCenter(center: NSUserNotificationCenter, shouldPresentNotification notification: NSUserNotification) -> Bool {
         return true
+    }
+
+    func viewForStatusItemOpeningPanelController(panelController: PanelController) -> NSView {
+        return statusItemView
     }
 }
 

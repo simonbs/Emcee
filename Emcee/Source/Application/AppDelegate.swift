@@ -20,15 +20,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     private let themeChangedNotification = "AppleInterfaceThemeChangedNotification"
     private let lastFMAPIKey = "01b8faa134fd09c93bb5a64c83516b20"
     private let lastFMSecret = "c5db3db17beb4fce4b568bf10aac6ee1"
-    private let panelController: PanelController
-    
+    private let panelController: PlayingPanelController
     
     override init() {
         let statusBar = NSStatusBar.systemStatusBar();
         let length: CGFloat = -1 // NSVariableStatusItemLength
         let item = statusBar.statusItemWithLength(length);
         statusItemView = StatusItemView(item: item)
-        panelController = PanelController(windowNibName: "Panel")
+        panelController = PlayingPanelController(windowNibName: "Panel")
         super.init()
         statusItemView.style = isStatusBarDark() ? .Light : .Dark
         playersAgent.delegate = self
@@ -76,8 +75,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     }
     
     func statusItemViewRightClicked(view: StatusItemView) {
-        let quitItem = NSMenuItem(title: "Quit", action: Selector("quitApp:"), keyEquivalent: "Q")
+        panelController.closePanel(animated: true)
         
+        let quitItem = NSMenuItem(title: "Quit", action: Selector("quitApp:"), keyEquivalent: "Q")
         let menu = NSMenu()
         menu.addItem(quitItem)
         view.item.popUpStatusItemMenu(menu)

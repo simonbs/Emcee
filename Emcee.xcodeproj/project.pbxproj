@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		721B673E1AC5B26500A10B75 /* Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721B673D1AC5B26500A10B75 /* Panel.swift */; };
 		721B67411AC5B3C900A10B75 /* Panel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 721B673F1AC5B3C900A10B75 /* Panel.xib */; };
+		721B67441AC5C13600A10B75 /* PanelBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721B67431AC5C13600A10B75 /* PanelBackgroundView.swift */; };
+		721B67481AC5C68D00A10B75 /* PlayingPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721B67471AC5C68D00A10B75 /* PlayingPanelController.swift */; };
 		72458A9E1AC5A98700F41B0B /* PanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72458A9D1AC5A98700F41B0B /* PanelController.swift */; };
 		72458AA01AC5AF1E00F41B0B /* TopLevelFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72458A9F1AC5AF1E00F41B0B /* TopLevelFunctions.swift */; };
 		726BFA451AC0123100CFC4BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 726BFA441AC0123100CFC4BE /* Images.xcassets */; };
@@ -93,6 +95,8 @@
 /* Begin PBXFileReference section */
 		721B673D1AC5B26500A10B75 /* Panel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Panel.swift; sourceTree = "<group>"; };
 		721B67401AC5B3C900A10B75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Panel.xib; sourceTree = "<group>"; };
+		721B67431AC5C13600A10B75 /* PanelBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelBackgroundView.swift; sourceTree = "<group>"; };
+		721B67471AC5C68D00A10B75 /* PlayingPanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingPanelController.swift; sourceTree = "<group>"; };
 		72458A9D1AC5A98700F41B0B /* PanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelController.swift; sourceTree = "<group>"; };
 		72458A9F1AC5AF1E00F41B0B /* TopLevelFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopLevelFunctions.swift; sourceTree = SOURCE_ROOT; };
 		726BFA3B1AC0123100CFC4BE /* Emcee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emcee.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				72458A9D1AC5A98700F41B0B /* PanelController.swift */,
+				721B67471AC5C68D00A10B75 /* PlayingPanelController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 			children = (
 				726BFAAB1AC012AA00CFC4BE /* StatusItemView.swift */,
 				721B673D1AC5B26500A10B75 /* Panel.swift */,
+				721B67431AC5C13600A10B75 /* PanelBackgroundView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -477,10 +483,12 @@
 			files = (
 				72458AA01AC5AF1E00F41B0B /* TopLevelFunctions.swift in Sources */,
 				72458A9E1AC5A98700F41B0B /* PanelController.swift in Sources */,
+				721B67441AC5C13600A10B75 /* PanelBackgroundView.swift in Sources */,
 				721B673E1AC5B26500A10B75 /* Panel.swift in Sources */,
 				72DA7DCD1AC0B6130018C83C /* LastFMExtensions.swift in Sources */,
 				726BFAAC1AC012AA00CFC4BE /* AppDelegate.swift in Sources */,
 				726BFAAD1AC012AA00CFC4BE /* StatusItemView.swift in Sources */,
+				721B67481AC5C68D00A10B75 /* PlayingPanelController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

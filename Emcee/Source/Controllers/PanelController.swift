@@ -12,8 +12,9 @@ protocol PanelControllerDelegate {
     func viewForStatusItemOpeningPanelController(panelController: PanelController) -> NSView
 }
 
-class PanelController: NSWindowController {
+class PanelController: NSWindowController, NSWindowDelegate {
     
+    @IBOutlet weak var backgroundView: PanelBackgroundView!
     internal var showAnimationDuration: NSTimeInterval = 0.15
     internal var closeAnimationDuration: NSTimeInterval = 0.15
     internal var delegate: PanelControllerDelegate?
@@ -22,11 +23,16 @@ class PanelController: NSWindowController {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        if let statusItemView = delegate?.viewForStatusItemOpeningPanelController(self) {
+            let statusItemFrame = statusItemFrameForStatusItemView(statusItemView)
+            let panelRect = panelFrameWithStatusItemView(statusItemView)
+            backgroundView.arrowX = statusItemFrame.midX - panelRect.minX
+        }
+        
         window?.acceptsMouseMovedEvents = true
         window?.level = kCGPopUpMenuWindowLevelKey
         window?.opaque = false
-//        window?.backgroundColor = .clearColor()
-        window?.setFrame(window!.frame, display: false)
+        window?.backgroundColor = .clearColor()
     }
     
     // MARK: - Private methods
@@ -44,27 +50,24 @@ class PanelController: NSWindowController {
             return
         }
         
-        let panel = window as NSPanel
         if let statusItemView = delegate?.viewForStatusItemOpeningPanelController(self) {
-            let statusItemFrame = statusItemView.window!.convertRectToScreen(statusItemView.frame)
-            let panelXPos = statusItemFrame.maxX - statusItemView.frame.width / 2 - panel.frame.width / 2
-            let panelOrigin = NSPoint(x: panelXPos, y: statusItemFrame.maxY - panel.frame.height)
-            let panelRect = NSRect(origin: panelOrigin, size: panel.frame.size).integerRect
-        
-            NSApplication.sharedApplication().activateIgnoringOtherApps(false)
-            panel.alphaValue = animated ? 0 : 1
-            panel.setFrame(panelRect, display: true)
-            panel.makeKeyAndOrderFront(nil)
+            let statusItemFrame = statusItemFrameForStatusItemView(statusItemView)
+            let panelRect = panelFrameWithStatusItemView(statusItemView)
+            
+            NSApp.activateIgnoringOtherApps(false)
+            window?.alphaValue = animated ? 0 : 1
+            window?.setFrame(panelRect, display: true)
+            window?.makeKeyAndOrderFront(nil)
+            
+            if animated {
+                NSAnimationContext.beginGrouping()
+                NSAnimationContext.currentContext().duration = showAnimationDuration
+                window?.animator().alphaValue = 1
+                NSAnimationContext.endGrouping()
+            }
+            
+            visible = true
         }
-    
-        if animated {
-            NSAnimationContext.beginGrouping()
-            NSAnimationContext.currentContext().duration = showAnimationDuration
-            panel.animator().alphaValue = 1
-            NSAnimationContext.endGrouping()
-        }
-        
-        visible = true
     }
     
     internal func closePanel(animated: Bool = false) {
@@ -90,14 +93,21 @@ class PanelController: NSWindowController {
         visible = false
     }
     
-    private func statusRect() -> NSRect? {
-        let screenRect = NSScreen.screens()!.first!.frame
-        let view = delegate?.viewForStatusItemOpeningPanelController(self)
-        if let view = view {
-            return view.window!.convertRectToScreen(view.frame)
+    private func statusItemFrameForStatusItemView(statusItemView: NSView) -> NSRect {
+        return statusItemView.window!.convertRectToScreen(statusItemView.frame)
+    }
+    
+    private func panelFrameWithStatusItemView(statusItemView: NSView) -> NSRect {
+        let statusItemFrame = statusItemFrameForStatusItemView(statusItemView)
+        let panelXPos = statusItemFrame.maxX - statusItemView.frame.width / 2 - window!.frame.width / 2
+        let panelOrigin = NSPoint(x: panelXPos, y: statusItemFrame.maxY - window!.frame.height)
+        return NSRect(origin: panelOrigin, size: window!.frame.size).integerRect
+    }
+    
+    func windowDidResignKey(notification: NSNotification) {
+        if window!.visible {
+            closePanel(animated: true)
         }
-        
-        return nil
     }
     
 }

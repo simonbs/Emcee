@@ -23,8 +23,8 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lpC-0k-Ph7">
-                        <rect key="frame" x="109" y="118" width="82" height="32"/>
-                        <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="O9E-NU-MLC">
+                        <rect key="frame" x="71" y="118" width="159" height="32"/>
+                        <buttonCell key="cell" type="push" title="Connect to LastFM" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="O9E-NU-MLC">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -35,7 +35,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="centerX" secondItem="lpC-0k-Ph7" secondAttribute="centerX" id="GRp-af-QYO"/>
-                    <constraint firstAttribute="centerY" secondItem="lpC-0k-Ph7" secondAttribute="centerY" constant="0.5" id="NG1-1e-s8K"/>
+                    <constraint firstAttribute="centerY" secondItem="lpC-0k-Ph7" secondAttribute="centerY" id="NG1-1e-s8K"/>
                 </constraints>
             </view>
             <connections>

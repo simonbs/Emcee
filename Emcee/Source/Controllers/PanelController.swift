@@ -28,7 +28,7 @@ class PanelController: NSWindowController, NSWindowDelegate {
             let panelRect = panelFrameWithStatusItemView(statusItemView)
             backgroundView.arrowX = statusItemFrame.midX - panelRect.minX
         }
-        
+    
         window?.acceptsMouseMovedEvents = true
         window?.level = kCGPopUpMenuWindowLevelKey
         window?.opaque = false

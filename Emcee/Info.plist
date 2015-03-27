@@ -30,6 +30,17 @@
 	<string>Copyright © 2015 SimonBS. All rights reserved.</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>EmceeURLHandler</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>emcee</string>
+			</array>
+		</dict>
+	</array>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 </dict>

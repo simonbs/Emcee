@@ -9,18 +9,15 @@
 import Cocoa
 
 class PlayingPanelController: PanelController {
-    
+
     @IBOutlet weak var connectButton: NSButton!
     
     @IBAction func connectPressed(sender: AnyObject) {
-        getLastFMClient().authorize { success, error in
-            if let error = error {
-                NSLog("Could not authorize: \(error)")
-            } else if !success {
-                NSLog("Could not authorize but got no error")
-            } else {
-                NSLog("Successfully authorized!")
-            }
+        let apiKey = getLastFMClient().apiKey
+        NSLog("Has API key")
+        let callback = "emcee://auth/callback"
+        if let url = NSURL(string: "http://www.last.fm/api/auth/?api_key=" + apiKey + "&cb=" + callback) {
+            NSWorkspace.sharedWorkspace().openURL(url)
         }
     }
 }

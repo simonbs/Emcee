@@ -34,6 +34,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         panelController.delegate = self
     }
     
+    func applicationWillFinishLaunching(notification: NSNotification) {
+        NSAppleEventManager.sharedAppleEventManager().setEventHandler(self, andSelector: Selector("handleURLEvent:withReplyEvent:"), forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
+    }
+    
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         let notificationCenter = NSDistributedNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self, selector: Selector("interfaceThemeChanged:"), name: themeChangedNotification, object: nil)
@@ -157,6 +161,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
 
     func viewForStatusItemOpeningPanelController(panelController: PanelController) -> NSView {
         return statusItemView
+    }
+    
+    func handleURLEvent(event: NSAppleEventDescriptor, withReplyEvent replyEvent: NSAppleEventDescriptor) {
+        if let url = event.paramDescriptorForKeyword(AEKeyword(keyDirectObject))?.stringValue {
+            NSLog(url)
+        }
     }
 }
 

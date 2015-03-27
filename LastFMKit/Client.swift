@@ -13,7 +13,7 @@ import SwiftyJSON
 
 public class Client {
     
-    private let apiKey: String
+    public let apiKey: String
     private let secret: String
     private let baseURL = "http://ws.audioscrobbler.com/2.0/"
     
@@ -87,7 +87,5 @@ public class Client {
         str = str + secret
         return str.md5()!
     }
-    
-    
     
 }

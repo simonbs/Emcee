@@ -13,6 +13,18 @@ func delay(delay: NSTimeInterval, closure: () -> ()) {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), closure)
 }
 
+func getAppDelegate() -> AppDelegate {
+    return NSApplication.sharedApplication().delegate as AppDelegate
+}
+
 func getLastFMClient() -> LastFMKit.Client {
-    return (NSApplication.sharedApplication().delegate as AppDelegate).lastFMClient
+    return getAppDelegate().lastFMClient
+}
+
+func getPanelController() -> PanelController {
+    return getAppDelegate().panelController
+}
+
+func getStatusItemView() -> StatusItemView {
+    return getAppDelegate().statusItemView
 }

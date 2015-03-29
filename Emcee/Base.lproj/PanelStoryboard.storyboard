@@ -4,42 +4,64 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6751"/>
     </dependencies>
     <scenes>
-        <!--Connect View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="P8I-Zx-A2Z">
             <objects>
-                <viewController id="tlP-Uf-jdx" customClass="ConnectViewController" customModule="Emcee" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="DKq-Xg-GDD">
-                        <rect key="frame" x="0.0" y="0.0" width="324" height="239"/>
+                <viewController id="tlP-Uf-jdx" customClass="MainViewController" customModule="Emcee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="DKq-Xg-GDD" customClass="PanelBackgroundView" customModule="Emcee" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="285"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="m1i-bR-LvQ">
-                                <rect key="frame" x="83" y="103" width="159" height="32"/>
-                                <buttonCell key="cell" type="push" title="Connect to LastFM" bezelStyle="rounded" alignment="center" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="rVt-pH-9on">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="Ahz-71-qHq">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="285"/>
                                 <connections>
-                                    <action selector="connectButtonClicked:" target="tlP-Uf-jdx" id="QVp-Jm-IAk"/>
+                                    <segue destination="0Se-KN-8Ge" kind="embed" id="aWz-so-Uhl"/>
                                 </connections>
-                            </button>
+                            </containerView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="m1i-bR-LvQ" secondAttribute="centerX" constant="-0.5" id="9Fh-GV-lGE"/>
-                            <constraint firstAttribute="centerY" secondItem="m1i-bR-LvQ" secondAttribute="centerY" constant="0.5" id="ESN-IT-oua"/>
+                            <constraint firstItem="Ahz-71-qHq" firstAttribute="leading" secondItem="DKq-Xg-GDD" secondAttribute="leading" id="6Ws-t4-guI"/>
+                            <constraint firstAttribute="trailing" secondItem="Ahz-71-qHq" secondAttribute="trailing" id="TKN-WZ-dm9"/>
+                            <constraint firstAttribute="bottom" secondItem="Ahz-71-qHq" secondAttribute="bottom" id="Y89-d1-cTj"/>
+                            <constraint firstItem="Ahz-71-qHq" firstAttribute="top" secondItem="DKq-Xg-GDD" secondAttribute="top" id="n3r-0V-3uB"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="connectButton" destination="m1i-bR-LvQ" id="34P-tc-xz9"/>
-                    </connections>
                 </viewController>
                 <customObject id="LYI-O2-8ry" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="844" y="744.5"/>
+            <point key="canvasLocation" x="854" y="744.5"/>
+        </scene>
+        <!--Overview View Controller-->
+        <scene sceneID="SZf-gd-J5g">
+            <objects>
+                <viewController storyboardIdentifier="Overview" id="Rob-w4-fWN" customClass="OverviewViewController" customModule="Emcee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="eG1-Kg-kg1">
+                        <rect key="frame" x="0.0" y="0.0" width="324" height="237"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wsx-Pz-Hyr">
+                                <rect key="frame" x="143" y="110" width="38" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="hT5-D1-zYw">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="wsx-Pz-Hyr" secondAttribute="centerY" id="60Q-UD-Eq7"/>
+                            <constraint firstAttribute="centerX" secondItem="wsx-Pz-Hyr" secondAttribute="centerX" id="J94-qQ-uG4"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="QJK-jg-4Kl" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1420" y="1185.5"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="3qh-7z-pS0">
             <objects>
-                <windowController id="TVp-3g-UDQ" customClass="PanelController" customModule="Emcee" customModuleProvider="target" sceneMemberID="viewController">
+                <windowController id="TVp-3g-UDQ" customClass="EmceePanelController" customModule="Emcee" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="D0O-dA-47k" customClass="Panel" customModule="Emcee" customModuleProvider="target">
                         <windowStyleMask key="styleMask" utility="YES" nonactivatingPanel="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -56,6 +78,32 @@
                 <customObject id="Lqd-69-5Z8" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="296" y="745"/>
+        </scene>
+        <!--Connect View Controller-->
+        <scene sceneID="ig2-GN-LY4">
+            <objects>
+                <viewController id="0Se-KN-8Ge" customClass="ConnectViewController" customModule="Emcee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="TEO-WL-xWn">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MgF-Ng-6mc">
+                                <rect key="frame" x="146" y="133" width="159" height="32"/>
+                                <buttonCell key="cell" type="push" title="Connect to LastFM" bezelStyle="rounded" alignment="center" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="MmZ-V5-ktX">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="MgF-Ng-6mc" secondAttribute="centerX" constant="-0.5" id="Khm-hm-lK8"/>
+                            <constraint firstAttribute="centerY" secondItem="MgF-Ng-6mc" secondAttribute="centerY" constant="0.5" id="WTO-gZ-hOI"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="UMq-Ut-hvc" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1392" y="745"/>
         </scene>
     </scenes>
 </document>

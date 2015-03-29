@@ -11,15 +11,16 @@ import PlayersKit
 import LastFMKit
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate, StatusItemViewDelegate, PlayersAgentDelegate, PlayerDelegate, PanelControllerDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate, StatusItemViewDelegate, PlayersAgentDelegate, PlayerDelegate {
     
-    private let statusItemView: StatusItemView
+    internal let statusItemView: StatusItemView
+    internal let panelController: PanelController
+    internal let lastFMClient = LastFMKit.Client(apiKey: "01b8faa134fd09c93bb5a64c83516b20", secret: "c5db3db17beb4fce4b568bf10aac6ee1")
+    
     private let playersAgent = PlayersAgent()
     private var activePlayer: Player?
     private var clearNotificationCenterTimer: NSTimer?
     private let themeChangedNotification = "AppleInterfaceThemeChangedNotification"
-    private let panelController: PanelController
-    internal let lastFMClient = LastFMKit.Client(apiKey: "01b8faa134fd09c93bb5a64c83516b20", secret: "c5db3db17beb4fce4b568bf10aac6ee1")
     
     override init() {
         let statusBar = NSStatusBar.systemStatusBar();
@@ -32,7 +33,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         statusItemView.style = isStatusBarDark() ? .Light : .Dark
         playersAgent.delegate = self
         statusItemView.delegate = self
-        panelController.delegate = self
     }
     
     func applicationWillFinishLaunching(notification: NSNotification) {
@@ -159,15 +159,28 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     func userNotificationCenter(center: NSUserNotificationCenter, shouldPresentNotification notification: NSUserNotification) -> Bool {
         return true
     }
-
-    func viewForStatusItemOpeningPanelController(panelController: PanelController) -> NSView {
-        return statusItemView
-    }
     
     func handleURLEvent(event: NSAppleEventDescriptor, withReplyEvent replyEvent: NSAppleEventDescriptor) {
-        if let url = event.paramDescriptorForKeyword(AEKeyword(keyDirectObject))?.stringValue {
-            NSLog(url)
+        if let absoluteURL = event.paramDescriptorForKeyword(AEKeyword(keyDirectObject))?.stringValue {
+            if let url = NSURL(string: absoluteURL) {
+                handleURLScheme(url)
+            }
         }
     }
+    
+    func handleURLScheme(url: NSURL) {
+        if url.host == "auth" && url.path == "/callback" {
+            handleAuthCallback(url)
+        }
+    }
+    
+    func handleAuthCallback(url: NSURL) {
+        if let params = url.queryParameters {
+            if let token = params["token"] {
+                Preferences().lastFMToken = token
+            }
+        }
+    }
+    
 }
 

@@ -109,4 +109,12 @@ class PanelController: NSWindowController, NSWindowDelegate {
         }
     }
     
+    func windowDidResize(notification: NSNotification) {
+        if let statusItemView = delegate?.viewForStatusItemOpeningPanelController(self) {
+            let statusItemFrame = statusItemFrameForStatusItemView(statusItemView)
+            let panelRect = panelFrameWithStatusItemView(statusItemView)
+            backgroundView.arrowX = statusItemFrame.midX - panelRect.minX
+        }
+    }
+    
 }

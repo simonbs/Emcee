@@ -9,11 +9,11 @@
             <objects>
                 <viewController id="tlP-Uf-jdx" sceneMemberID="viewController">
                     <view key="view" id="DKq-Xg-GDD">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="324" height="239"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="m1i-bR-LvQ">
-                                <rect key="frame" x="146" y="133" width="159" height="32"/>
+                                <rect key="frame" x="83" y="103" width="159" height="32"/>
                                 <buttonCell key="cell" type="push" title="Connect to LastFM" bezelStyle="rounded" alignment="center" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="rVt-pH-9on">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -28,7 +28,7 @@
                 </viewController>
                 <customObject id="LYI-O2-8ry" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="905" y="745"/>
+            <point key="canvasLocation" x="844" y="744.5"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="3qh-7z-pS0">

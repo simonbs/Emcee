@@ -39,13 +39,13 @@ class PanelController: NSWindowController, NSWindowDelegate {
     
     internal func toggleVisibility(animated: Bool = false) {
         if visible {
-            closePanel(animated: animated)
+            hidePanel(animated: animated)
         } else {
-            openPanel(animated: animated)
+            showPanel(animated: animated)
         }
     }
     
-    internal func openPanel(animated: Bool = false) {
+    internal func showPanel(animated: Bool = false) {
         if visible {
             return
         }
@@ -70,7 +70,7 @@ class PanelController: NSWindowController, NSWindowDelegate {
         }
     }
     
-    internal func closePanel(animated: Bool = false) {
+    internal func hidePanel(animated: Bool = false) {
         if !visible {
             return
         }
@@ -106,7 +106,7 @@ class PanelController: NSWindowController, NSWindowDelegate {
     
     func windowDidResignKey(notification: NSNotification) {
         if window!.visible {
-            closePanel(animated: true)
+            hidePanel(animated: true)
         }
     }
     

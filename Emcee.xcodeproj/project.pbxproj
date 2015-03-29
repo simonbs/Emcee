@@ -12,7 +12,6 @@
 		720AE3931AC8722300627152 /* NSViewAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720AE3911AC8722300627152 /* NSViewAutoLayout.swift */; };
 		721B673E1AC5B26500A10B75 /* Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721B673D1AC5B26500A10B75 /* Panel.swift */; };
 		721B67441AC5C13600A10B75 /* PanelBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721B67431AC5C13600A10B75 /* PanelBackgroundView.swift */; };
-		721B67481AC5C68D00A10B75 /* PlayingPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721B67471AC5C68D00A10B75 /* PlayingPanelController.swift */; };
 		721B67541AC5CDC700A10B75 /* LastFMExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721B67511AC5CDC700A10B75 /* LastFMExtensions.swift */; };
 		721B67551AC5CDC700A10B75 /* TopLevelFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721B67521AC5CDC700A10B75 /* TopLevelFunctions.swift */; };
 		72458A9E1AC5A98700F41B0B /* PanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72458A9D1AC5A98700F41B0B /* PanelController.swift */; };
@@ -100,7 +99,6 @@
 		720AE3911AC8722300627152 /* NSViewAutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSViewAutoLayout.swift; sourceTree = "<group>"; };
 		721B673D1AC5B26500A10B75 /* Panel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Panel.swift; sourceTree = "<group>"; };
 		721B67431AC5C13600A10B75 /* PanelBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelBackgroundView.swift; sourceTree = "<group>"; };
-		721B67471AC5C68D00A10B75 /* PlayingPanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingPanelController.swift; sourceTree = "<group>"; };
 		721B67511AC5CDC700A10B75 /* LastFMExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastFMExtensions.swift; sourceTree = "<group>"; };
 		721B67521AC5CDC700A10B75 /* TopLevelFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopLevelFunctions.swift; sourceTree = "<group>"; };
 		72458A9D1AC5A98700F41B0B /* PanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelController.swift; sourceTree = "<group>"; };
@@ -188,7 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				72458A9D1AC5A98700F41B0B /* PanelController.swift */,
-				721B67471AC5C68D00A10B75 /* PlayingPanelController.swift */,
 				720AE38C1AC86A9000627152 /* ConnectViewController.swift */,
 			);
 			path = Controllers;
@@ -496,7 +493,6 @@
 				726BFAAC1AC012AA00CFC4BE /* AppDelegate.swift in Sources */,
 				720AE38D1AC86A9000627152 /* ConnectViewController.swift in Sources */,
 				726BFAAD1AC012AA00CFC4BE /* StatusItemView.swift in Sources */,
-				721B67481AC5C68D00A10B75 /* PlayingPanelController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

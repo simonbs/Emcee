@@ -18,7 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     private var activePlayer: Player?
     private var clearNotificationCenterTimer: NSTimer?
     private let themeChangedNotification = "AppleInterfaceThemeChangedNotification"
-    private let panelController: PlayingPanelController
+    private let panelController: PanelController
     internal let lastFMClient = LastFMKit.Client(apiKey: "01b8faa134fd09c93bb5a64c83516b20", secret: "c5db3db17beb4fce4b568bf10aac6ee1")
     
     override init() {
@@ -27,7 +27,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         let item = statusBar.statusItemWithLength(length);
         statusItemView = StatusItemView(item: item)
         let storyboard = NSStoryboard(name: "PanelStoryboard", bundle: NSBundle.mainBundle())
-        panelController = storyboard?.instantiateInitialController() as PlayingPanelController
+        panelController = storyboard?.instantiateInitialController() as PanelController
         super.init()
         statusItemView.style = isStatusBarDark() ? .Light : .Dark
         playersAgent.delegate = self

@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6751"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Connect View Controller-->
         <scene sceneID="P8I-Zx-A2Z">
             <objects>
-                <viewController id="tlP-Uf-jdx" sceneMemberID="viewController">
+                <viewController id="tlP-Uf-jdx" customClass="ConnectViewController" customModule="Emcee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="DKq-Xg-GDD">
                         <rect key="frame" x="0.0" y="0.0" width="324" height="239"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -18,6 +18,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="connectButtonClicked:" target="tlP-Uf-jdx" id="QVp-Jm-IAk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -25,6 +28,9 @@
                             <constraint firstAttribute="centerY" secondItem="m1i-bR-LvQ" secondAttribute="centerY" constant="0.5" id="ESN-IT-oua"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="connectButton" destination="m1i-bR-LvQ" id="34P-tc-xz9"/>
+                    </connections>
                 </viewController>
                 <customObject id="LYI-O2-8ry" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -33,7 +39,7 @@
         <!--Window Controller-->
         <scene sceneID="3qh-7z-pS0">
             <objects>
-                <windowController id="TVp-3g-UDQ" customClass="PlayingPanelController" customModule="Emcee" customModuleProvider="target" sceneMemberID="viewController">
+                <windowController id="TVp-3g-UDQ" customClass="PanelController" customModule="Emcee" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="D0O-dA-47k" customClass="Panel" customModule="Emcee" customModuleProvider="target">
                         <windowStyleMask key="styleMask" utility="YES" nonactivatingPanel="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>

@@ -10,8 +10,8 @@ import AppKit
 
 class Panel: NSPanel {
    
-    override var canBecomeKeyWindow: Bool {
-        return true
-    }
+//    override var canBecomeKeyWindow: Bool {
+//        return true
+//    }
     
 }

@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		720AE38D1AC86A9000627152 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720AE38C1AC86A9000627152 /* ConnectViewController.swift */; };
+		720AE3901AC86B4500627152 /* PanelStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720AE38E1AC86B4500627152 /* PanelStoryboard.storyboard */; };
+		720AE3931AC8722300627152 /* NSViewAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720AE3911AC8722300627152 /* NSViewAutoLayout.swift */; };
 		721B673E1AC5B26500A10B75 /* Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721B673D1AC5B26500A10B75 /* Panel.swift */; };
-		721B67411AC5B3C900A10B75 /* Panel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 721B673F1AC5B3C900A10B75 /* Panel.xib */; };
 		721B67441AC5C13600A10B75 /* PanelBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721B67431AC5C13600A10B75 /* PanelBackgroundView.swift */; };
 		721B67481AC5C68D00A10B75 /* PlayingPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721B67471AC5C68D00A10B75 /* PlayingPanelController.swift */; };
 		721B67541AC5CDC700A10B75 /* LastFMExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721B67511AC5CDC700A10B75 /* LastFMExtensions.swift */; };
@@ -93,8 +95,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		720AE38C1AC86A9000627152 /* ConnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
+		720AE38F1AC86B4500627152 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PanelStoryboard.storyboard; sourceTree = "<group>"; };
+		720AE3911AC8722300627152 /* NSViewAutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSViewAutoLayout.swift; sourceTree = "<group>"; };
 		721B673D1AC5B26500A10B75 /* Panel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Panel.swift; sourceTree = "<group>"; };
-		721B67401AC5B3C900A10B75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Panel.xib; sourceTree = "<group>"; };
 		721B67431AC5C13600A10B75 /* PanelBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelBackgroundView.swift; sourceTree = "<group>"; };
 		721B67471AC5C68D00A10B75 /* PlayingPanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingPanelController.swift; sourceTree = "<group>"; };
 		721B67511AC5CDC700A10B75 /* LastFMExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastFMExtensions.swift; sourceTree = "<group>"; };
@@ -164,8 +168,8 @@
 		721B67421AC5B3D600A10B75 /* User interface */ = {
 			isa = PBXGroup;
 			children = (
-				721B673F1AC5B3C900A10B75 /* Panel.xib */,
 				72DA7DCE1AC0BCE80018C83C /* MainMenu.xib */,
+				720AE38E1AC86B4500627152 /* PanelStoryboard.storyboard */,
 			);
 			name = "User interface";
 			sourceTree = "<group>";
@@ -175,6 +179,7 @@
 			children = (
 				721B67511AC5CDC700A10B75 /* LastFMExtensions.swift */,
 				721B67521AC5CDC700A10B75 /* TopLevelFunctions.swift */,
+				720AE3911AC8722300627152 /* NSViewAutoLayout.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 			children = (
 				72458A9D1AC5A98700F41B0B /* PanelController.swift */,
 				721B67471AC5C68D00A10B75 /* PlayingPanelController.swift */,
+				720AE38C1AC86A9000627152 /* ConnectViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -454,8 +460,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				721B67411AC5B3C900A10B75 /* Panel.xib in Resources */,
 				726BFA451AC0123100CFC4BE /* Images.xcassets in Resources */,
+				720AE3901AC86B4500627152 /* PanelStoryboard.storyboard in Resources */,
 				72DA7DD01AC0BCE80018C83C /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,10 +489,12 @@
 			files = (
 				721B67551AC5CDC700A10B75 /* TopLevelFunctions.swift in Sources */,
 				721B67541AC5CDC700A10B75 /* LastFMExtensions.swift in Sources */,
+				720AE3931AC8722300627152 /* NSViewAutoLayout.swift in Sources */,
 				72458A9E1AC5A98700F41B0B /* PanelController.swift in Sources */,
 				721B67441AC5C13600A10B75 /* PanelBackgroundView.swift in Sources */,
 				721B673E1AC5B26500A10B75 /* Panel.swift in Sources */,
 				726BFAAC1AC012AA00CFC4BE /* AppDelegate.swift in Sources */,
+				720AE38D1AC86A9000627152 /* ConnectViewController.swift in Sources */,
 				726BFAAD1AC012AA00CFC4BE /* StatusItemView.swift in Sources */,
 				721B67481AC5C68D00A10B75 /* PlayingPanelController.swift in Sources */,
 			);
@@ -530,12 +538,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		721B673F1AC5B3C900A10B75 /* Panel.xib */ = {
+		720AE38E1AC86B4500627152 /* PanelStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				721B67401AC5B3C900A10B75 /* Base */,
+				720AE38F1AC86B4500627152 /* Base */,
 			);
-			name = Panel.xib;
+			name = PanelStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 		72DA7DCE1AC0BCE80018C83C /* MainMenu.xib */ = {

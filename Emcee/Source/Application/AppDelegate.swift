@@ -26,7 +26,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         let length: CGFloat = -1 // NSVariableStatusItemLength
         let item = statusBar.statusItemWithLength(length);
         statusItemView = StatusItemView(item: item)
-        panelController = PlayingPanelController(windowNibName: "Panel")
+        let storyboard = NSStoryboard(name: "PanelStoryboard", bundle: NSBundle.mainBundle())
+        panelController = storyboard?.instantiateInitialController() as PlayingPanelController
         super.init()
         statusItemView.style = isStatusBarDark() ? .Light : .Dark
         playersAgent.delegate = self

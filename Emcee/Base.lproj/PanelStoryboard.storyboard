@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D72i" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="TVp-3g-UDQ">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6751"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="P8I-Zx-A2Z">
+            <objects>
+                <viewController id="tlP-Uf-jdx" sceneMemberID="viewController">
+                    <view key="view" id="DKq-Xg-GDD">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="m1i-bR-LvQ">
+                                <rect key="frame" x="146" y="133" width="159" height="32"/>
+                                <buttonCell key="cell" type="push" title="Connect to LastFM" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rVt-pH-9on">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="m1i-bR-LvQ" secondAttribute="centerX" constant="-0.5" id="9Fh-GV-lGE"/>
+                            <constraint firstAttribute="centerY" secondItem="m1i-bR-LvQ" secondAttribute="centerY" constant="0.5" id="ESN-IT-oua"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="LYI-O2-8ry" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="905" y="745"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="3qh-7z-pS0">
+            <objects>
+                <windowController id="TVp-3g-UDQ" customClass="PlayingPanelController" customModule="Emcee" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="D0O-dA-47k" customClass="Panel" customModule="Emcee" customModuleProvider="target">
+                        <windowStyleMask key="styleMask" utility="YES" nonactivatingPanel="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="245" y="301" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <connections>
+                            <outlet property="delegate" destination="TVp-3g-UDQ" id="ekB-E3-rA3"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="tlP-Uf-jdx" kind="relationship" relationship="window.shadowedContentViewController" id="6oo-xa-n02"/>
+                    </connections>
+                </windowController>
+                <customObject id="Lqd-69-5Z8" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="296" y="745"/>
+        </scene>
+    </scenes>
+</document>

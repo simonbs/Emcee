@@ -18,5 +18,11 @@ class PlayingPanelController: PanelController {
         if let url = NSURL(string: "http://www.last.fm/api/auth/?api_key=" + apiKey + "&cb=" + callback) {
             NSWorkspace.sharedWorkspace().openURL(url)
         }
+        
+        hidePanel(animated: true)
+    }
+    
+    private func showConnect() {
+
     }
 }

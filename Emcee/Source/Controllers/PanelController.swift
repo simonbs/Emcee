@@ -14,21 +14,19 @@ protocol PanelControllerDelegate {
 
 class PanelController: NSWindowController, NSWindowDelegate {
     
-    @IBOutlet weak var backgroundView: PanelBackgroundView!
     internal var showAnimationDuration: NSTimeInterval = 0.15
     internal var closeAnimationDuration: NSTimeInterval = 0.15
     internal var delegate: PanelControllerDelegate?
     internal private(set) var visible: Bool = false
+    private var backgroundView = PanelBackgroundView()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        if let statusItemView = delegate?.viewForStatusItemOpeningPanelController(self) {
-            let statusItemFrame = statusItemFrameForStatusItemView(statusItemView)
-            let panelRect = panelFrameWithStatusItemView(statusItemView)
-            backgroundView.arrowX = statusItemFrame.midX - panelRect.minX
-        }
-    
+        let contentView = window?.contentView as NSView
+        backgroundView.frame = contentView.bounds
+        contentView.addSubview(backgroundView, positioned: .Below, relativeTo: nil)
+        
         window?.acceptsMouseMovedEvents = true
         window?.level = kCGPopUpMenuWindowLevelKey
         window?.opaque = false
@@ -53,6 +51,7 @@ class PanelController: NSWindowController, NSWindowDelegate {
         if let statusItemView = delegate?.viewForStatusItemOpeningPanelController(self) {
             let statusItemFrame = statusItemFrameForStatusItemView(statusItemView)
             let panelRect = panelFrameWithStatusItemView(statusItemView)
+            backgroundView.arrowX = statusItemFrame.midX - panelRect.minX
             
             NSApp.activateIgnoringOtherApps(false)
             window?.alphaValue = animated ? 0 : 1

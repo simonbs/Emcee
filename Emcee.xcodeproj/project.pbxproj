@@ -49,6 +49,7 @@
 		72DA7DC71AC0A8C60018C83C /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA7DC61AC0A8C60018C83C /* Error.swift */; };
 		72DA7DCB1AC0AED80018C83C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA7DCA1AC0AED80018C83C /* Endpoint.swift */; };
 		72DA7DD01AC0BCE80018C83C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72DA7DCE1AC0BCE80018C83C /* MainMenu.xib */; };
+		72F314DD1ACAC10A00CA49C5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F314DC1ACAC10A00CA49C5 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +139,7 @@
 		72DA7DC61AC0A8C60018C83C /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		72DA7DCA1AC0AED80018C83C /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		72DA7DCF1AC0BCE80018C83C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		72F314DC1ACAC10A00CA49C5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 		721B674F1AC5CDC700A10B75 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				72F314DC1ACAC10A00CA49C5 /* Constants.swift */,
 				721B67521AC5CDC700A10B75 /* TopLevelFunctions.swift */,
 				720AE3911AC8722300627152 /* NSViewAutoLayout.swift */,
 				720AE3951AC878FA00627152 /* NSURLExtensions.swift */,
@@ -507,6 +510,7 @@
 				721B673E1AC5B26500A10B75 /* Panel.swift in Sources */,
 				726BFAAC1AC012AA00CFC4BE /* AppDelegate.swift in Sources */,
 				720AE3971AC878FA00627152 /* NSURLExtensions.swift in Sources */,
+				72F314DD1ACAC10A00CA49C5 /* Constants.swift in Sources */,
 				720AE38D1AC86A9000627152 /* ConnectViewController.swift in Sources */,
 				726BFAAD1AC012AA00CFC4BE /* StatusItemView.swift in Sources */,
 			);

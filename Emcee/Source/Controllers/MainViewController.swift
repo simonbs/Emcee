@@ -15,13 +15,23 @@ class MainViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        showControllerWithIdentifier("Connect")
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("didConnectToLastFM:"), name: DidConnectToLastFMNotification, object: nil)
+                
+        if let lastFMToken = Preferences().lastFMToken {
+            showControllerWithIdentifier("Overview")
+        } else {
+            showControllerWithIdentifier("Connect")
+        }
     }
 
     override func viewWillAppear() {
         super.viewWillAppear()
         
         repositionArrow()
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     private func repositionArrow() {
@@ -49,4 +59,7 @@ class MainViewController: NSViewController {
         }
     }
     
+    func didConnectToLastFM(notification: NSNotification) {
+        showControllerWithIdentifier("Overview")
+    }
 }

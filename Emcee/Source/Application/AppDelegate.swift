@@ -178,6 +178,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         if let params = url.queryParameters {
             if let token = params["token"] {
                 Preferences().lastFMToken = token
+                NSNotificationCenter.defaultCenter().postNotificationName(DidConnectToLastFMNotification, object: nil)
+                panelController.showPanel(animated: true)
             }
         }
     }

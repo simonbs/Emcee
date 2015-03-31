@@ -41,7 +41,7 @@ class MainViewController: NSViewController {
         let windowFrame = view.window!.frame
         
         let distanceToStatusItem = statusItemFrame.minX - windowFrame.minX
-        backgroundView.arrowX = distanceToStatusItem + statusItemFrame.width / 2 + backgroundView.arrowSize.width / 2
+        backgroundView.arrowX = distanceToStatusItem + statusItemFrame.width / 2
     }
     
     private func showControllerWithIdentifier(identifier: String) {

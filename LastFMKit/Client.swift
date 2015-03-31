@@ -22,8 +22,8 @@ public class Client {
         self.secret = secret
     }
     
-    public func getToken(completion: (String?, NSURL?, NSError?) -> ()) {
-        performRequest(method: Endpoint.Auth.GetToken.rawValue, completion: { json, error in
+    public func getToken(completion: (String?, NSURL?, NSError?) -> ()) -> Alamofire.Request {
+        return performRequest(method: Endpoint.Auth.GetToken.rawValue, completion: { json, error in
             if let error = error {
                 completion(nil, nil, error)
             } else if let token = json?["token"].string? {
@@ -35,9 +35,9 @@ public class Client {
         })
     }
     
-    public func getSession(token: String, completion: (Session?, NSError?) -> ()) {
+    public func getSession(token: String, completion: (Session?, NSError?) -> ()) -> Alamofire.Request {
         let params = [ "token": token ]
-        performRequest(method: Endpoint.Auth.GetSession.rawValue, params: params) { json, error in
+        return performRequest(method: Endpoint.Auth.GetSession.rawValue, params: params) { json, error in
             if let error = error {
                 completion(nil, error)
             } else {
@@ -46,13 +46,30 @@ public class Client {
         }
     }
     
-    public func getTopArtists() {
-        
+    public func getTopArtists(username: String, period: Period = .Overall, limit: Int = 50, page: Int = 0, completion: ([Artist]?, NSError?) -> ()) -> Alamofire.Request {
+        let params: [String: AnyObject] = [
+            "user": username,
+            "period": period.rawValue,
+            "limit": limit,
+            "page": page
+        ]
+        return performRequest(method: Endpoint.User.GetTopArtists.rawValue, params: params) { json, error in
+            if let error = error {
+                completion(nil, error)
+            } else {
+                if let jsonArtists = json!["topartists"]["artist"].array {
+                    let artists = jsonArtists.map({ jsonArtist in Artist(json: jsonArtist) })
+                    completion(artists, nil)
+                } else {
+                    completion([], nil)
+                }
+            }
+        }
     }
     
-    internal func performRequest(httpMethod: Alamofire.Method = .GET, method: String, params: [String: AnyObject] = [:], completion: (JSON?, NSError?) -> ()) {
+    internal func performRequest(httpMethod: Alamofire.Method = .GET, method: String, params: [String: AnyObject] = [:], completion: (JSON?, NSError?) -> ()) -> Alamofire.Request {
         let allParams = parameters(method, params)
-        request(httpMethod, baseURL, parameters: allParams, encoding: .URL).responseJSON { (request, response, jsonResponse, error) in
+        return request(httpMethod, baseURL, parameters: allParams, encoding: .URL).responseJSON { (request, response, jsonResponse, error) in
             if let error = error {
                 return completion(nil, error)
             }

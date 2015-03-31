@@ -25,7 +25,7 @@ class StatusItemView: NSView {
     internal var style: Style = .Dark {
         didSet { needsDisplay = true }
     }
-    internal var text: String? {
+    internal var text: NSAttributedString? {
         didSet { needsDisplay = true }
     }
     internal var isSelected: Bool = false {
@@ -57,19 +57,21 @@ class StatusItemView: NSView {
         let thickness = NSStatusBar.systemStatusBar().thickness
         
         if let text = text {
+            let mutableText = NSMutableAttributedString(attributedString: text)
+            let entireRange = NSMakeRange(0, mutableText.length)
+            
             var attributes: [String: AnyObject] = [ NSFontNameAttribute: NSFont.systemFontOfSize(20) ]
             if style == .Light {
-                attributes[NSForegroundColorAttributeName] = NSColor.whiteColor()
+                mutableText.addAttribute(NSForegroundColorAttributeName, value: NSColor.whiteColor(), range: entireRange)
             } else {
-                attributes[NSForegroundColorAttributeName] = NSColor.blackColor()
+                mutableText.addAttribute(NSForegroundColorAttributeName, value: NSColor.blackColor(), range: entireRange)
             }
             
-            let str = text as NSString
             let maxSize = NSSize(width: CGFloat(MAXFLOAT), height: thickness)
-            let textSize = str.boundingRectWithSize(maxSize, options: nil, attributes: attributes)
+            let textSize = text.boundingRectWithSize(maxSize, options: nil)
             let yOffset = (thickness - textSize.height) / 2
-            let rect = NSRect(x: 0, y: yOffset, width: textSize.width, height: textSize.height)
-            str.drawInRect(rect, withAttributes: attributes)
+            let rect = NSRect(x: 0, y: yOffset + 1, width: textSize.width, height: textSize.height)
+            text.drawInRect(rect)
             item.length = rect.width
         } else {
             let image = NSImage(named: "statusbar-\(style.rawValue)")!

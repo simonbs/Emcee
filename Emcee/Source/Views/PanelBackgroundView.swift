@@ -8,16 +8,6 @@
 
 import Cocoa
 
-/*
-#define FILL_OPACITY 0.9f
-#define STROKE_OPACITY 1.0f
-
-#define LINE_THICKNESS 1.0f
-#define CORNER_RADIUS 6.0f
-
-#define SEARCH_INSET 10.0f
-*/
-
 class PanelBackgroundView: NSView {
     
     internal var lineThickness: CGFloat = 1 {

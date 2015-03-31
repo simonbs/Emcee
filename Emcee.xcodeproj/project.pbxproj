@@ -20,6 +20,9 @@
 		721B67551AC5CDC700A10B75 /* TopLevelFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721B67521AC5CDC700A10B75 /* TopLevelFunctions.swift */; };
 		72458A9E1AC5A98700F41B0B /* PanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72458A9D1AC5A98700F41B0B /* PanelController.swift */; };
 		725329621ACAD40D00021E3E /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725329611ACAD40D00021E3E /* Session.swift */; };
+		725329641ACADAD500021E3E /* Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725329631ACADAD500021E3E /* Values.swift */; };
+		725329661ACADF3700021E3E /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725329651ACADF3700021E3E /* Artist.swift */; };
+		725BC4411ACAF86D006393F0 /* TransparentTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725BC4401ACAF86D006393F0 /* TransparentTableView.swift */; };
 		726BFA451AC0123100CFC4BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 726BFA441AC0123100CFC4BE /* Images.xcassets */; };
 		726BFA671AC0124800CFC4BE /* LastFMKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 726BFA661AC0124800CFC4BE /* LastFMKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		726BFA8C1AC0125800CFC4BE /* PlayersKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 726BFA8B1AC0125800CFC4BE /* PlayersKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -38,7 +41,9 @@
 		726BFACA1AC0132500CFC4BE /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFAC51AC0132500CFC4BE /* Player.swift */; };
 		726BFACB1AC0132500CFC4BE /* RdioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFAC61AC0132500CFC4BE /* RdioPlayer.swift */; };
 		726BFACC1AC0132500CFC4BE /* SpotifyPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFAC71AC0132500CFC4BE /* SpotifyPlayer.swift */; };
+		7273521B1ACAECB800DC2D0C /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7273521A1ACAECB800DC2D0C /* Asset.swift */; };
 		72AF3B851AC0312C0018DC12 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72AF3B831AC030FA0018DC12 /* Alamofire.framework */; };
+		72B38EE71ACB03FE002281DC /* TopTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B38EE61ACB03FE002281DC /* TopTableRowView.swift */; };
 		72CDF6161AC0910D008086C3 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72AF3B831AC030FA0018DC12 /* Alamofire.framework */; };
 		72D09C401AC0337A00913968 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72D09C3E1AC0336400913968 /* SwiftyJSON.framework */; };
 		72DA7DBE1AC098600018C83C /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72DA7DBD1AC098600018C83C /* CryptoSwift.framework */; };
@@ -114,6 +119,9 @@
 		721B67521AC5CDC700A10B75 /* TopLevelFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopLevelFunctions.swift; sourceTree = "<group>"; };
 		72458A9D1AC5A98700F41B0B /* PanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelController.swift; sourceTree = "<group>"; };
 		725329611ACAD40D00021E3E /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		725329631ACADAD500021E3E /* Values.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Values.swift; sourceTree = "<group>"; };
+		725329651ACADF3700021E3E /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		725BC4401ACAF86D006393F0 /* TransparentTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentTableView.swift; sourceTree = "<group>"; };
 		726BFA3B1AC0123100CFC4BE /* Emcee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emcee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		726BFA3F1AC0123100CFC4BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		726BFA441AC0123100CFC4BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -136,7 +144,9 @@
 		726BFAC51AC0132500CFC4BE /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		726BFAC61AC0132500CFC4BE /* RdioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RdioPlayer.swift; sourceTree = "<group>"; };
 		726BFAC71AC0132500CFC4BE /* SpotifyPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyPlayer.swift; sourceTree = "<group>"; };
+		7273521A1ACAECB800DC2D0C /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		72AF3B831AC030FA0018DC12 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
+		72B38EE61ACB03FE002281DC /* TopTableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTableRowView.swift; sourceTree = "<group>"; };
 		72D09C3E1AC0336400913968 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
 		72DA7DBD1AC098600018C83C /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
 		72DA7DC61AC0A8C60018C83C /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
@@ -215,6 +225,8 @@
 			isa = PBXGroup;
 			children = (
 				725329611ACAD40D00021E3E /* Session.swift */,
+				725329651ACADF3700021E3E /* Artist.swift */,
+				7273521A1ACAECB800DC2D0C /* Asset.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -266,6 +278,7 @@
 				726BFAB21AC0130700CFC4BE /* Client.swift */,
 				72DA7DC61AC0A8C60018C83C /* Error.swift */,
 				72DA7DCA1AC0AED80018C83C /* Endpoint.swift */,
+				725329631ACADAD500021E3E /* Values.swift */,
 				726BFA661AC0124800CFC4BE /* LastFMKit.h */,
 				726BFA641AC0124800CFC4BE /* Supporting Files */,
 			);
@@ -326,6 +339,8 @@
 				726BFAAB1AC012AA00CFC4BE /* StatusItemView.swift */,
 				721B673D1AC5B26500A10B75 /* Panel.swift */,
 				721B67431AC5C13600A10B75 /* PanelBackgroundView.swift */,
+				725BC4401ACAF86D006393F0 /* TransparentTableView.swift */,
+				72B38EE61ACB03FE002281DC /* TopTableRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -522,7 +537,9 @@
 				720AE3A31AC87E2000627152 /* OverviewViewController.swift in Sources */,
 				72F314DF1ACAC3D500CA49C5 /* NotificationCenterExtensions.swift in Sources */,
 				721B67441AC5C13600A10B75 /* PanelBackgroundView.swift in Sources */,
+				72B38EE71ACB03FE002281DC /* TopTableRowView.swift in Sources */,
 				721B673E1AC5B26500A10B75 /* Panel.swift in Sources */,
+				725BC4411ACAF86D006393F0 /* TransparentTableView.swift in Sources */,
 				726BFAAC1AC012AA00CFC4BE /* AppDelegate.swift in Sources */,
 				720AE3971AC878FA00627152 /* NSURLExtensions.swift in Sources */,
 				72F314DD1ACAC10A00CA49C5 /* Constants.swift in Sources */,
@@ -535,8 +552,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				725329661ACADF3700021E3E /* Artist.swift in Sources */,
+				7273521B1ACAECB800DC2D0C /* Asset.swift in Sources */,
 				725329621ACAD40D00021E3E /* Session.swift in Sources */,
 				726BFAB51AC0130700CFC4BE /* Client.swift in Sources */,
+				725329641ACADAD500021E3E /* Values.swift in Sources */,
 				72DA7DCB1AC0AED80018C83C /* Endpoint.swift in Sources */,
 				72DA7DC71AC0A8C60018C83C /* Error.swift in Sources */,
 			);

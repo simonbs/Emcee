@@ -10,6 +10,8 @@
 	<string>Emcee</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>93608FFF008CD82ADDFA850BB9C1630FA754586F</key>
+		<string>github.com:Thomvis/BrightFutures.git</string>
 		<key>9D0DE6F39466798B9C518A32781E46D98D8E8A02</key>
 		<string>github.com:simonbs/Emcee.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>Emcee.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>93608FFF008CD82ADDFA850BB9C1630FA754586F</key>
+		<string>../../BrightFutures</string>
 		<key>9D0DE6F39466798B9C518A32781E46D98D8E8A02</key>
 		<string>../..</string>
 	</dict>
@@ -28,6 +32,14 @@
 	<string>9D0DE6F39466798B9C518A32781E46D98D8E8A02</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>93608FFF008CD82ADDFA850BB9C1630FA754586F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BrightFutures</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

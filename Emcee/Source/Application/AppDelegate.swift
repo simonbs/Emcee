@@ -14,7 +14,7 @@ import LastFMKit
 class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate, StatusItemViewDelegate, PlayersAgentDelegate, PlayerDelegate {
     
     internal let statusItemView: StatusItemView
-    internal let panelController: PanelController
+    internal var panelController: PanelController!
     internal let lastFMClient = LastFMKit.Client(apiKey: LastFMAPIKey, secret: LastFMSecret)
     
     private let playersAgent = PlayersAgent()
@@ -27,8 +27,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         let length: CGFloat = -1 // NSVariableStatusItemLength
         let item = statusBar.statusItemWithLength(length);
         statusItemView = StatusItemView(item: item)
-        let storyboard = NSStoryboard(name: "PanelStoryboard", bundle: NSBundle.mainBundle())
-        panelController = storyboard?.instantiateInitialController() as PanelController
+        
         super.init()
         statusItemView.style = isStatusBarDark() ? .Light : .Dark
         playersAgent.delegate = self
@@ -40,6 +39,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     }
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+        let storyboard = NSStoryboard(name: "PanelStoryboard", bundle: NSBundle.mainBundle())
+        panelController = storyboard?.instantiateInitialController() as PanelController
+        
         let notificationCenter = NSDistributedNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self, selector: "interfaceThemeChanged:", name: themeChangedNotification)
         usePlayer(playersAgent.runningPlayers.first)
@@ -142,7 +144,24 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     }
     
     private func displayTrack(track: Track) {
-        statusItemView.text = "\(track.artistName) - \(track.trackName)"
+        let maxLength = 50
+        let text = "\(track.artistName) \(track.trackName)"
+       
+        let fontSize: CGFloat = 13
+        let defaultFont = NSFont.systemFontOfSize(fontSize)
+        let defaultAttributes = [ NSFontAttributeName: defaultFont ]
+        let trackString = NSAttributedString(string: track.trackName, attributes: defaultAttributes)
+        
+        if countElements(text) > maxLength {
+            statusItemView.text = trackString
+        } else {
+            let artistFont = NSFont.boldSystemFontOfSize(fontSize)
+            let artistAttributes = [ NSFontAttributeName: artistFont ]
+            let attributedString = NSMutableAttributedString(string: track.artistName, attributes: artistAttributes)
+            attributedString.appendAttributedString(NSAttributedString(string: " "))
+            attributedString.appendAttributedString(trackString)
+            statusItemView.text = attributedString
+        }
     }
     
     private func notifyTrack(track: Track) {
@@ -199,7 +218,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
             if let session = session {
                 let preferences = Preferences()
                 preferences.lastFMUsername = session.username
-                preferences.lastFMUsername = session.key
+                preferences.lastFMAuthenticationKey = session.key
                 
                 NSNotificationCenter.defaultCenter().postNotificationName(DidConnectToLastFMNotification)
                 self.panelController.showPanel(animated: true)

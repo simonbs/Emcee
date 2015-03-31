@@ -11,20 +11,6 @@
                     <view key="view" id="DKq-Xg-GDD" customClass="PanelBackgroundView" customModule="Emcee" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="300" height="285"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="Ahz-71-qHq">
-                                <rect key="frame" x="0.0" y="0.0" width="300" height="285"/>
-                                <connections>
-                                    <segue destination="0Se-KN-8Ge" kind="embed" id="aWz-so-Uhl"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="Ahz-71-qHq" firstAttribute="leading" secondItem="DKq-Xg-GDD" secondAttribute="leading" id="6Ws-t4-guI"/>
-                            <constraint firstAttribute="trailing" secondItem="Ahz-71-qHq" secondAttribute="trailing" id="TKN-WZ-dm9"/>
-                            <constraint firstAttribute="bottom" secondItem="Ahz-71-qHq" secondAttribute="bottom" id="Y89-d1-cTj"/>
-                            <constraint firstItem="Ahz-71-qHq" firstAttribute="top" secondItem="DKq-Xg-GDD" secondAttribute="top" id="n3r-0V-3uB"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="LYI-O2-8ry" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -36,11 +22,11 @@
             <objects>
                 <viewController storyboardIdentifier="Overview" id="Rob-w4-fWN" customClass="OverviewViewController" customModule="Emcee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="eG1-Kg-kg1">
-                        <rect key="frame" x="0.0" y="0.0" width="324" height="237"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="271"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wsx-Pz-Hyr">
-                                <rect key="frame" x="143" y="110" width="38" height="17"/>
+                                <rect key="frame" x="206" y="127" width="38" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="hT5-D1-zYw">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -56,7 +42,7 @@
                 </viewController>
                 <customObject id="QJK-jg-4Kl" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1420" y="1185.5"/>
+            <point key="canvasLocation" x="1392" y="1103.5"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="3qh-7z-pS0">
@@ -82,7 +68,7 @@
         <!--Connect View Controller-->
         <scene sceneID="ig2-GN-LY4">
             <objects>
-                <viewController id="0Se-KN-8Ge" customClass="ConnectViewController" customModule="Emcee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Connect" id="0Se-KN-8Ge" customClass="ConnectViewController" customModule="Emcee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="TEO-WL-xWn">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>

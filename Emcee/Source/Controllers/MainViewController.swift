@@ -9,6 +9,14 @@
 import Cocoa
 
 class MainViewController: NSViewController {
+    
+    private var currentController: NSViewController?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        showControllerWithIdentifier("Connect")
+    }
 
     override func viewWillAppear() {
         super.viewWillAppear()
@@ -24,6 +32,21 @@ class MainViewController: NSViewController {
         
         let distanceToStatusItem = statusItemFrame.minX - windowFrame.minX
         backgroundView.arrowX = distanceToStatusItem + statusItemFrame.width / 2 + backgroundView.arrowSize.width / 2
+    }
+    
+    private func showControllerWithIdentifier(identifier: String) {
+        if let currentController = currentController {
+            currentController.view.removeFromSuperview()
+            currentController.removeFromParentViewController()
+            self.currentController = nil
+        }
+        
+        if let newController = storyboard?.instantiateControllerWithIdentifier(identifier) as? NSViewController {
+            addChildViewController(newController)
+            view.addSubview(newController.view)
+            view.constraints(vertical: "|[newView]|", horizontal: "|[newView]|", [ "newView" : newController.view ])
+            currentController = newController
+        }
     }
     
 }

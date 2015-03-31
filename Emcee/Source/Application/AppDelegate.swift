@@ -68,7 +68,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     }
     
     func statusItemViewRightClicked(view: StatusItemView) {
-        panelController.showPanel(animated: true)
+        panelController.hidePanel(animated: true)
         
         let quitItem = NSMenuItem(title: "Quit", action: Selector("quitApp:"), keyEquivalent: "Q")
         let menu = NSMenu()

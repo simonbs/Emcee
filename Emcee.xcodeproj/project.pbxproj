@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		720AE38D1AC86A9000627152 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720AE38C1AC86A9000627152 /* ConnectViewController.swift */; };
 		720AE3901AC86B4500627152 /* PanelStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720AE38E1AC86B4500627152 /* PanelStoryboard.storyboard */; };
-		720AE3931AC8722300627152 /* NSViewAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720AE3911AC8722300627152 /* NSViewAutoLayout.swift */; };
+		720AE3931AC8722300627152 /* NSViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720AE3911AC8722300627152 /* NSViewExtensions.swift */; };
 		720AE3971AC878FA00627152 /* NSURLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720AE3951AC878FA00627152 /* NSURLExtensions.swift */; };
 		720AE39B1AC87AEF00627152 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720AE3991AC87AEF00627152 /* Preferences.swift */; };
 		720AE39F1AC87C6C00627152 /* EmceePanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720AE39D1AC87C6C00627152 /* EmceePanelController.swift */; };
@@ -19,6 +19,7 @@
 		721B67441AC5C13600A10B75 /* PanelBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721B67431AC5C13600A10B75 /* PanelBackgroundView.swift */; };
 		721B67551AC5CDC700A10B75 /* TopLevelFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721B67521AC5CDC700A10B75 /* TopLevelFunctions.swift */; };
 		72458A9E1AC5A98700F41B0B /* PanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72458A9D1AC5A98700F41B0B /* PanelController.swift */; };
+		725329621ACAD40D00021E3E /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725329611ACAD40D00021E3E /* Session.swift */; };
 		726BFA451AC0123100CFC4BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 726BFA441AC0123100CFC4BE /* Images.xcassets */; };
 		726BFA671AC0124800CFC4BE /* LastFMKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 726BFA661AC0124800CFC4BE /* LastFMKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		726BFA8C1AC0125800CFC4BE /* PlayersKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 726BFA8B1AC0125800CFC4BE /* PlayersKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -102,7 +103,7 @@
 /* Begin PBXFileReference section */
 		720AE38C1AC86A9000627152 /* ConnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		720AE38F1AC86B4500627152 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PanelStoryboard.storyboard; sourceTree = "<group>"; };
-		720AE3911AC8722300627152 /* NSViewAutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSViewAutoLayout.swift; sourceTree = "<group>"; };
+		720AE3911AC8722300627152 /* NSViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSViewExtensions.swift; sourceTree = "<group>"; };
 		720AE3951AC878FA00627152 /* NSURLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLExtensions.swift; sourceTree = "<group>"; };
 		720AE3991AC87AEF00627152 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		720AE39D1AC87C6C00627152 /* EmceePanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmceePanelController.swift; sourceTree = "<group>"; };
@@ -112,6 +113,7 @@
 		721B67431AC5C13600A10B75 /* PanelBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelBackgroundView.swift; sourceTree = "<group>"; };
 		721B67521AC5CDC700A10B75 /* TopLevelFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopLevelFunctions.swift; sourceTree = "<group>"; };
 		72458A9D1AC5A98700F41B0B /* PanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelController.swift; sourceTree = "<group>"; };
+		725329611ACAD40D00021E3E /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		726BFA3B1AC0123100CFC4BE /* Emcee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emcee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		726BFA3F1AC0123100CFC4BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		726BFA441AC0123100CFC4BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -189,10 +191,10 @@
 			children = (
 				72F314DC1ACAC10A00CA49C5 /* Constants.swift */,
 				721B67521AC5CDC700A10B75 /* TopLevelFunctions.swift */,
-				720AE3911AC8722300627152 /* NSViewAutoLayout.swift */,
+				720AE3911AC8722300627152 /* NSViewExtensions.swift */,
 				720AE3951AC878FA00627152 /* NSURLExtensions.swift */,
-				720AE3991AC87AEF00627152 /* Preferences.swift */,
 				72F314DE1ACAC3D500CA49C5 /* NotificationCenterExtensions.swift */,
+				720AE3991AC87AEF00627152 /* Preferences.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -207,6 +209,14 @@
 				720AE3A11AC87E2000627152 /* OverviewViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		725329601ACAD40500021E3E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				725329611ACAD40D00021E3E /* Session.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		726BFA321AC0123100CFC4BE = {
@@ -252,6 +262,7 @@
 		726BFA631AC0124800CFC4BE /* LastFMKit */ = {
 			isa = PBXGroup;
 			children = (
+				725329601ACAD40500021E3E /* Models */,
 				726BFAB21AC0130700CFC4BE /* Client.swift */,
 				72DA7DC61AC0A8C60018C83C /* Error.swift */,
 				72DA7DCA1AC0AED80018C83C /* Endpoint.swift */,
@@ -504,7 +515,7 @@
 			files = (
 				721B67551AC5CDC700A10B75 /* TopLevelFunctions.swift in Sources */,
 				720AE3A71AC87F9F00627152 /* MainViewController.swift in Sources */,
-				720AE3931AC8722300627152 /* NSViewAutoLayout.swift in Sources */,
+				720AE3931AC8722300627152 /* NSViewExtensions.swift in Sources */,
 				720AE39B1AC87AEF00627152 /* Preferences.swift in Sources */,
 				720AE39F1AC87C6C00627152 /* EmceePanelController.swift in Sources */,
 				72458A9E1AC5A98700F41B0B /* PanelController.swift in Sources */,
@@ -524,6 +535,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				725329621ACAD40D00021E3E /* Session.swift in Sources */,
 				726BFAB51AC0130700CFC4BE /* Client.swift in Sources */,
 				72DA7DCB1AC0AED80018C83C /* Endpoint.swift in Sources */,
 				72DA7DC71AC0A8C60018C83C /* Error.swift in Sources */,

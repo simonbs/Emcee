@@ -1,5 +1,5 @@
 //
-//  NSViewAutoLayout.swift
+//  NSViewExtensions.swift
 //  Emcee
 //
 //  Created by Simon Støvring on 29/03/15.

@@ -11,11 +11,17 @@ import Cocoa
 class Preferences {
 
     private var store: NSUserDefaults
-    private let lastFMTokenKey = "dk.simonbs.Emcee.LastFMToken"
+    private let lastFMUsernameKey = "dk.simonbs.Emcee.LastFMUsername"
+    private let lastFMAuthenticationKeyKey = "dk.simonbs.Emcee.lastFMAuthenticationKey"
     
-    internal var lastFMToken: String? {
-        set { store.setObject(newValue, forKey: lastFMTokenKey) }
-        get { return store.stringForKey(lastFMTokenKey) }
+    internal var lastFMUsername: String? {
+        set { store.setObject(newValue, forKey: lastFMUsernameKey ) }
+        get { return store.stringForKey(lastFMUsernameKey) }
+    }
+    
+    internal var lastFMAuthenticationKey: String? {
+        set { store.setObject(newValue, forKey: lastFMAuthenticationKeyKey ) }
+        get { return store.stringForKey(lastFMAuthenticationKeyKey) }
     }
     
     init(store: NSUserDefaults = .standardUserDefaults()) {

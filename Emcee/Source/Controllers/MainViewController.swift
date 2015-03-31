@@ -18,8 +18,8 @@ class MainViewController: NSViewController {
         let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self, selector: "didConnectToLastFM:", name: DidConnectToLastFMNotification)
         notificationCenter.addObserver(self, selector: "didDisconnectFromLastFM:", name: DidDisconnectFromLastFMNotification)
-                
-        if let lastFMToken = Preferences().lastFMToken {
+        
+        if Preferences().lastFMUsername != nil {
             showControllerWithIdentifier("Overview")
         } else {
             showControllerWithIdentifier("Connect")

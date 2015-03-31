@@ -35,18 +35,22 @@ public class Client {
         })
     }
     
-    public func getSession(token: String) {
+    public func getSession(token: String, completion: (Session?, NSError?) -> ()) {
         let params = [ "token": token ]
         performRequest(method: Endpoint.Auth.GetSession.rawValue, params: params) { json, error in
             if let error = error {
-                NSLog("\(error)")
+                completion(nil, error)
             } else {
-                NSLog("\(json)")
+                completion(Session(json: json!), nil)
             }
         }
     }
     
-    private func performRequest(httpMethod: Alamofire.Method = .GET, method: String, params: [String: AnyObject] = [:], completion: (JSON?, NSError?) -> ()) {
+    public func getTopArtists() {
+        
+    }
+    
+    internal func performRequest(httpMethod: Alamofire.Method = .GET, method: String, params: [String: AnyObject] = [:], completion: (JSON?, NSError?) -> ()) {
         let allParams = parameters(method, params)
         request(httpMethod, baseURL, parameters: allParams, encoding: .URL).responseJSON { (request, response, jsonResponse, error) in
             if let error = error {
@@ -69,9 +73,9 @@ public class Client {
     private func parameters(method: String, _ params: [String: AnyObject] = [:]) -> [String: AnyObject] {
         var allParams = params
         allParams["method"] = method
-        allParams["format"] = "json"
         allParams["api_key"] = apiKey
         allParams["api_sig"] = signature(allParams)
+        allParams["format"] = "json"
         return allParams
     }
     

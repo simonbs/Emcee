@@ -15,7 +15,9 @@ class MainViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("didConnectToLastFM:"), name: DidConnectToLastFMNotification, object: nil)
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.addObserver(self, selector: "didConnectToLastFM:", name: DidConnectToLastFMNotification)
+        notificationCenter.addObserver(self, selector: "didDisconnectFromLastFM:", name: DidDisconnectFromLastFMNotification)
                 
         if let lastFMToken = Preferences().lastFMToken {
             showControllerWithIdentifier("Overview")
@@ -62,4 +64,9 @@ class MainViewController: NSViewController {
     func didConnectToLastFM(notification: NSNotification) {
         showControllerWithIdentifier("Overview")
     }
+    
+    func didDisconnectFromLastFM(notification: NSNotification) {
+        showControllerWithIdentifier("Connect")
+    }
+    
 }

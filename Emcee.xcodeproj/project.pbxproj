@@ -50,6 +50,7 @@
 		72DA7DCB1AC0AED80018C83C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA7DCA1AC0AED80018C83C /* Endpoint.swift */; };
 		72DA7DD01AC0BCE80018C83C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72DA7DCE1AC0BCE80018C83C /* MainMenu.xib */; };
 		72F314DD1ACAC10A00CA49C5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F314DC1ACAC10A00CA49C5 /* Constants.swift */; };
+		72F314DF1ACAC3D500CA49C5 /* NotificationCenterExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F314DE1ACAC3D500CA49C5 /* NotificationCenterExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,7 @@
 		72DA7DCA1AC0AED80018C83C /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		72DA7DCF1AC0BCE80018C83C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		72F314DC1ACAC10A00CA49C5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		72F314DE1ACAC3D500CA49C5 /* NotificationCenterExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCenterExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 				720AE3911AC8722300627152 /* NSViewAutoLayout.swift */,
 				720AE3951AC878FA00627152 /* NSURLExtensions.swift */,
 				720AE3991AC87AEF00627152 /* Preferences.swift */,
+				72F314DE1ACAC3D500CA49C5 /* NotificationCenterExtensions.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				720AE39F1AC87C6C00627152 /* EmceePanelController.swift in Sources */,
 				72458A9E1AC5A98700F41B0B /* PanelController.swift in Sources */,
 				720AE3A31AC87E2000627152 /* OverviewViewController.swift in Sources */,
+				72F314DF1ACAC3D500CA49C5 /* NotificationCenterExtensions.swift in Sources */,
 				721B67441AC5C13600A10B75 /* PanelBackgroundView.swift in Sources */,
 				721B673E1AC5B26500A10B75 /* Panel.swift in Sources */,
 				726BFAAC1AC012AA00CFC4BE /* AppDelegate.swift in Sources */,

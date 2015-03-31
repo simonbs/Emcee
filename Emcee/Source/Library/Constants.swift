@@ -9,3 +9,4 @@
 import Foundation
 
 internal let DidConnectToLastFMNotification = "dk.simonbs.Emcee.DidConnectToLastFMNotification"
+internal let DidDisconnectFromLastFMNotification = "dk.simonbs.Emcee.DidDisconnectFromLastFMNotification"

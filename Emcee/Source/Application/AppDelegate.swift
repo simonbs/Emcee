@@ -36,12 +36,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     }
     
     func applicationWillFinishLaunching(notification: NSNotification) {
-        NSAppleEventManager.sharedAppleEventManager().setEventHandler(self, andSelector: Selector("handleURLEvent:withReplyEvent:"), forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
+        NSAppleEventManager.sharedAppleEventManager().setEventHandler(self, andSelector: "handleURLEvent:withReplyEvent:", forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
     }
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         let notificationCenter = NSDistributedNotificationCenter.defaultCenter()
-        notificationCenter.addObserver(self, selector: Selector("interfaceThemeChanged:"), name: themeChangedNotification, object: nil)
+        notificationCenter.addObserver(self, selector: "interfaceThemeChanged:", name: themeChangedNotification)
         usePlayer(playersAgent.runningPlayers.first)
     }
     
@@ -70,10 +70,22 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     func statusItemViewRightClicked(view: StatusItemView) {
         panelController.hidePanel(animated: true)
         
-        let quitItem = NSMenuItem(title: "Quit", action: Selector("quitApp:"), keyEquivalent: "Q")
+        let quitItem = NSMenuItem(title: "Quit", action: "quitApp:", keyEquivalent: "Q")
         let menu = NSMenu()
+        
+        if Preferences().lastFMToken != nil {
+            let disconnectItem = NSMenuItem(title: "Disconnect from LastFM", action: "disconnectFromLastFM:", keyEquivalent: "")
+            menu.addItem(disconnectItem)
+            menu.addItem(NSMenuItem.separatorItem())
+        }
+        
         menu.addItem(quitItem)
         view.item.popUpStatusItemMenu(menu)
+    }
+    
+    func disconnectFromLastFM(sender: AnyObject) {
+        Preferences().lastFMToken = nil
+        NSNotificationCenter.defaultCenter().postNotificationName(DidDisconnectFromLastFMNotification)
     }
     
     func quitApp(sender: AnyObject) {
@@ -149,7 +161,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
             timer.invalidate()
         }
         
-        clearNotificationCenterTimer = NSTimer.scheduledTimerWithTimeInterval(7, target: self, selector: Selector("clearNotificationCenter"), userInfo: nil, repeats: false)
+        clearNotificationCenterTimer = NSTimer.scheduledTimerWithTimeInterval(7, target: self, selector: "clearNotificationCenter", userInfo: nil, repeats: false)
     }
     
     func clearNotificationCenter() {
@@ -178,7 +190,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         if let params = url.queryParameters {
             if let token = params["token"] {
                 Preferences().lastFMToken = token
-                NSNotificationCenter.defaultCenter().postNotificationName(DidConnectToLastFMNotification, object: nil)
+                NSNotificationCenter.defaultCenter().postNotificationName(DidConnectToLastFMNotification)
                 panelController.showPanel(animated: true)
             }
         }

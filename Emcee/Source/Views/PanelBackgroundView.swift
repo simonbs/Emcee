@@ -8,27 +8,40 @@
 
 import Cocoa
 
+@IBDesignable
 class PanelBackgroundView: NSView {
     
-    internal var lineThickness: CGFloat = 1 {
+    @IBInspectable internal var lineThickness: CGFloat = 1 {
         didSet { needsDisplay = true }
     }
     
-    internal var arrowSize: CGSize = CGSizeMake(18, 10) {
+    @IBInspectable internal var arrowSize: CGSize = CGSizeMake(18, 10) {
         didSet { needsDisplay = true }
     }
     
-    internal var cornerRadius: CGFloat = 5 {
+    @IBInspectable internal var cornerRadius: CGFloat = 5 {
         didSet { needsDisplay = true }
     }
     
     internal var arrowX: CGFloat = 0 {
         didSet { needsDisplay = true }
     }
+    
+    @IBInspectable internal var fillColor: NSColor = NSColor(deviceWhite: 1, alpha: 0.98) {
+        didSet { needsDisplay = true }
+    }
+    
+    @IBInspectable internal var strokeColor: NSColor = .whiteColor() {
+        didSet { needsDisplay = true }
+    }
+    
+    override func prepareForInterfaceBuilder() {
+        arrowX = bounds.width / 2
+    }
 
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
-
+        
         let contentRect = NSInsetRect(bounds, lineThickness, lineThickness)
         let path = NSBezierPath()
         
@@ -56,7 +69,7 @@ class PanelBackgroundView: NSView {
         path.lineToPoint(NSMakePoint(arrowX - arrowSize.width / 2, contentRect.maxY - arrowSize.height))
         path.closePath()
         
-        NSColor(deviceWhite: 1, alpha: 0.98).setFill()
+        fillColor.setFill()
         path.fill()
         
         NSGraphicsContext.saveGraphicsState()
@@ -64,9 +77,9 @@ class PanelBackgroundView: NSView {
         let clip = NSBezierPath(rect: bounds)
         clip.appendBezierPath(path)
         clip.addClip()
-        
+
         path.lineWidth = lineThickness * 2
-        NSColor.whiteColor().setStroke()
+        strokeColor.setStroke()
         path.stroke()
         
         NSGraphicsContext.restoreGraphicsState()

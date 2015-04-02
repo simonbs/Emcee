@@ -16,13 +16,18 @@ class TopTableRowView: NSTableRowView {
     @IBOutlet weak var detailLabel: NSTextField!
     
     private var imageRequest: Alamofire.Request?
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override var opaque: Bool {
+        return false
     }
     
     override func drawBackgroundInRect(dirtyRect: NSRect) {
         NSRectFillUsingOperation(dirtyRect, .CompositeClear)
+        
+        let sideMargins: CGFloat = 10
+        let separatorRect = CGRectMake(sideMargins, dirtyRect.maxY - 1, dirtyRect.width - sideMargins * 2, 1)
+        let context = NSGraphicsContext.currentContext()?.CGContext
+        CGContextSetFillColorWithColor(context, NSColor(deviceWhite: 0.85, alpha: 1).CGColor)
+        CGContextFillRect(context, separatorRect)
     }
     
     override func prepareForReuse() {

@@ -18,7 +18,7 @@ class TransparentTableView: NSTableView {
         super.awakeFromNib()
         enclosingScrollView?.drawsBackground = false
     }
-    
+
     override func drawBackgroundInClipRect(clipRect: NSRect) {
         NSRectFillUsingOperation(clipRect, .CompositeClear)
     }

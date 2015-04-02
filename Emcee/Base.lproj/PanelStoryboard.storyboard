@@ -28,15 +28,14 @@
                         <subviews>
                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="62" horizontalPageScroll="10" verticalLineScroll="62" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSd-eM-Pxm">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="261"/>
-                                <clipView key="contentView" id="jgE-JD-lMI">
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="jgE-JD-lMI">
                                     <rect key="frame" x="1" y="0.0" width="238" height="134"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="60" viewBased="YES" id="ky5-1x-bKN" customClass="TransparentTableView" customModule="Emcee" customModuleProvider="target">
+                                        <tableView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="60" viewBased="YES" id="ky5-1x-bKN" customClass="TransparentTableView" customModule="Emcee" customModuleProvider="target">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <tableViewGridLines key="gridStyleMask" horizontal="YES"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
                                                 <tableColumn editable="NO" width="447" minWidth="40" maxWidth="1000" id="uFO-l3-aba">

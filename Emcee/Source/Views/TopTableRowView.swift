@@ -11,7 +11,7 @@ import Alamofire
 
 class TopTableRowView: NSTableRowView {
 
-    @IBOutlet weak var imageView: NSImageView!
+    @IBOutlet weak var imageView: AspectFillImageView!
     @IBOutlet weak var titleLabel: NSTextField!
     @IBOutlet weak var detailLabel: NSTextField!
     

@@ -52,14 +52,13 @@
                                                             <rect key="frame" x="1" y="1" width="447" height="60"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="REn-ak-lRF">
+                                                                <customView translatesAutoresizingMaskIntoConstraints="NO" id="lEq-2y-D9T" customClass="AspectFillImageView" customModule="Emcee" customModuleProvider="target">
                                                                     <rect key="frame" x="10" y="6" width="48" height="48"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" secondItem="REn-ak-lRF" secondAttribute="height" multiplier="1:1" id="bJN-CQ-bzT"/>
-                                                                        <constraint firstAttribute="width" constant="48" id="pMv-wQ-hDs"/>
+                                                                        <constraint firstAttribute="width" secondItem="lEq-2y-D9T" secondAttribute="height" multiplier="1:1" id="5MY-XW-Vle"/>
+                                                                        <constraint firstAttribute="width" constant="48" id="orC-sf-SWb"/>
                                                                     </constraints>
-                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="WeG-cU-iAC"/>
-                                                                </imageView>
+                                                                </customView>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2cB-ia-ptp">
                                                                     <rect key="frame" x="66" y="32" width="49" height="26"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="BCZ-mN-O2d">
@@ -78,18 +77,18 @@
                                                                 </textField>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="PXO-jw-7mW" firstAttribute="bottom" secondItem="REn-ak-lRF" secondAttribute="bottom" id="AnC-fk-vPa"/>
-                                                                <constraint firstItem="2cB-ia-ptp" firstAttribute="top" secondItem="REn-ak-lRF" secondAttribute="top" constant="-4" id="I4Q-ug-11l"/>
-                                                                <constraint firstItem="2cB-ia-ptp" firstAttribute="leading" secondItem="REn-ak-lRF" secondAttribute="trailing" constant="10" id="Pvw-hb-6qZ"/>
+                                                                <constraint firstItem="2cB-ia-ptp" firstAttribute="top" secondItem="lEq-2y-D9T" secondAttribute="top" constant="-4" id="9R2-sU-8uk"/>
+                                                                <constraint firstAttribute="centerY" secondItem="lEq-2y-D9T" secondAttribute="centerY" id="HmN-vA-eF7"/>
+                                                                <constraint firstItem="PXO-jw-7mW" firstAttribute="leading" secondItem="lEq-2y-D9T" secondAttribute="trailing" constant="10" id="L6V-LN-pdf"/>
+                                                                <constraint firstItem="lEq-2y-D9T" firstAttribute="bottom" secondItem="PXO-jw-7mW" secondAttribute="bottom" id="R1d-76-afn"/>
                                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PXO-jw-7mW" secondAttribute="trailing" id="Tph-tk-fkZ"/>
-                                                                <constraint firstAttribute="centerY" secondItem="REn-ak-lRF" secondAttribute="centerY" id="YF1-No-UpR"/>
-                                                                <constraint firstItem="REn-ak-lRF" firstAttribute="leading" secondItem="Pcf-ek-46k" secondAttribute="leading" constant="10" id="mE3-Xb-1jV"/>
+                                                                <constraint firstItem="lEq-2y-D9T" firstAttribute="leading" secondItem="Pcf-ek-46k" secondAttribute="leading" constant="10" id="iKe-FV-CUh"/>
                                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2cB-ia-ptp" secondAttribute="trailing" id="oRu-kD-dgI"/>
-                                                                <constraint firstItem="PXO-jw-7mW" firstAttribute="leading" secondItem="REn-ak-lRF" secondAttribute="trailing" constant="10" id="qgt-rD-9Td"/>
+                                                                <constraint firstItem="2cB-ia-ptp" firstAttribute="leading" secondItem="lEq-2y-D9T" secondAttribute="trailing" constant="10" id="xcP-sG-HA7"/>
                                                             </constraints>
                                                             <connections>
                                                                 <outlet property="detailLabel" destination="PXO-jw-7mW" id="yYe-Cy-z4J"/>
-                                                                <outlet property="imageView" destination="REn-ak-lRF" id="fUF-pV-s6A"/>
+                                                                <outlet property="imageView" destination="lEq-2y-D9T" id="4Eh-zu-CgA"/>
                                                                 <outlet property="titleLabel" destination="2cB-ia-ptp" id="rLa-oz-nn8"/>
                                                             </connections>
                                                         </tableCellView>

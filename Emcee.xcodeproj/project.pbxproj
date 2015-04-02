@@ -11,7 +11,7 @@
 		720AE3901AC86B4500627152 /* PanelStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720AE38E1AC86B4500627152 /* PanelStoryboard.storyboard */; };
 		720AE39B1AC87AEF00627152 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720AE3991AC87AEF00627152 /* Preferences.swift */; };
 		720AE39F1AC87C6C00627152 /* EmceePanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720AE39D1AC87C6C00627152 /* EmceePanelController.swift */; };
-		720AE3A31AC87E2000627152 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720AE3A11AC87E2000627152 /* OverviewViewController.swift */; };
+		720AE3A31AC87E2000627152 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720AE3A11AC87E2000627152 /* TopViewController.swift */; };
 		720AE3A71AC87F9F00627152 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720AE3A51AC87F9F00627152 /* MainViewController.swift */; };
 		721B673E1AC5B26500A10B75 /* Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721B673D1AC5B26500A10B75 /* Panel.swift */; };
 		721B67441AC5C13600A10B75 /* PanelBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721B67431AC5C13600A10B75 /* PanelBackgroundView.swift */; };
@@ -46,6 +46,7 @@
 		726BFACB1AC0132500CFC4BE /* RdioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFAC61AC0132500CFC4BE /* RdioPlayer.swift */; };
 		726BFACC1AC0132500CFC4BE /* SpotifyPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BFAC71AC0132500CFC4BE /* SpotifyPlayer.swift */; };
 		7273521B1ACAECB800DC2D0C /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7273521A1ACAECB800DC2D0C /* Asset.swift */; };
+		728D09921ACD9618000E75E7 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D09911ACD9618000E75E7 /* OverviewViewController.swift */; };
 		72AF3B851AC0312C0018DC12 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72AF3B831AC030FA0018DC12 /* Alamofire.framework */; };
 		72B38EE71ACB03FE002281DC /* TopTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B38EE61ACB03FE002281DC /* TopTableRowView.swift */; };
 		72CDF6161AC0910D008086C3 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72AF3B831AC030FA0018DC12 /* Alamofire.framework */; };
@@ -113,7 +114,7 @@
 		720AE38F1AC86B4500627152 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PanelStoryboard.storyboard; sourceTree = "<group>"; };
 		720AE3991AC87AEF00627152 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		720AE39D1AC87C6C00627152 /* EmceePanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmceePanelController.swift; sourceTree = "<group>"; };
-		720AE3A11AC87E2000627152 /* OverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
+		720AE3A11AC87E2000627152 /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		720AE3A51AC87F9F00627152 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		721B673D1AC5B26500A10B75 /* Panel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Panel.swift; sourceTree = "<group>"; };
 		721B67431AC5C13600A10B75 /* PanelBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelBackgroundView.swift; sourceTree = "<group>"; };
@@ -152,6 +153,7 @@
 		726BFAC61AC0132500CFC4BE /* RdioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RdioPlayer.swift; sourceTree = "<group>"; };
 		726BFAC71AC0132500CFC4BE /* SpotifyPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyPlayer.swift; sourceTree = "<group>"; };
 		7273521A1ACAECB800DC2D0C /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		728D09911ACD9618000E75E7 /* OverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		72AF3B831AC030FA0018DC12 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 		72B38EE61ACB03FE002281DC /* TopTableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTableRowView.swift; sourceTree = "<group>"; };
 		72D09C3E1AC0336400913968 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
@@ -231,7 +233,8 @@
 				720AE39D1AC87C6C00627152 /* EmceePanelController.swift */,
 				720AE3A51AC87F9F00627152 /* MainViewController.swift */,
 				720AE38C1AC86A9000627152 /* ConnectViewController.swift */,
-				720AE3A11AC87E2000627152 /* OverviewViewController.swift */,
+				728D09911ACD9618000E75E7 /* OverviewViewController.swift */,
+				720AE3A11AC87E2000627152 /* TopViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 			files = (
 				721B67551AC5CDC700A10B75 /* TopLevelFunctions.swift in Sources */,
 				721D1AB51ACD624400A05867 /* Operators.swift in Sources */,
+				728D09921ACD9618000E75E7 /* OverviewViewController.swift in Sources */,
 				721D1AA61ACD5DB500A05867 /* AspectFillImageView.swift in Sources */,
 				720AE3A71AC87F9F00627152 /* MainViewController.swift in Sources */,
 				720AE39B1AC87AEF00627152 /* Preferences.swift in Sources */,
@@ -555,7 +559,7 @@
 				721D1AB41ACD624400A05867 /* NSViewExtensions.swift in Sources */,
 				721D1AB31ACD624400A05867 /* NSURLExtensions.swift in Sources */,
 				72458A9E1AC5A98700F41B0B /* PanelController.swift in Sources */,
-				720AE3A31AC87E2000627152 /* OverviewViewController.swift in Sources */,
+				720AE3A31AC87E2000627152 /* TopViewController.swift in Sources */,
 				721D1AB21ACD624400A05867 /* NotificationCenterExtensions.swift in Sources */,
 				721B67441AC5C13600A10B75 /* PanelBackgroundView.swift in Sources */,
 				72B38EE71ACB03FE002281DC /* TopTableRowView.swift in Sources */,

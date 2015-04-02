@@ -23,12 +23,12 @@
             <objects>
                 <viewController storyboardIdentifier="Overview" id="Rob-w4-fWN" customClass="OverviewViewController" customModule="Emcee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="eG1-Kg-kg1">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="271"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="400"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="62" horizontalPageScroll="10" verticalLineScroll="62" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSd-eM-Pxm">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="261"/>
-                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="jgE-JD-lMI">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="390"/>
+                                <clipView key="contentView" misplaced="YES" drawsBackground="NO" copiesOnScroll="NO" id="jgE-JD-lMI">
                                     <rect key="frame" x="1" y="0.0" width="238" height="134"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
@@ -38,7 +38,7 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn editable="NO" width="447" minWidth="40" maxWidth="1000" id="uFO-l3-aba">
+                                                <tableColumn editable="NO" width="297" minWidth="40" maxWidth="1000" id="uFO-l3-aba">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -48,7 +48,7 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="TopRow" id="Pcf-ek-46k" customClass="TopTableRowView" customModule="Emcee" customModuleProvider="target">
-                                                            <rect key="frame" x="1" y="1" width="447" height="60"/>
+                                                            <rect key="frame" x="1" y="1" width="297" height="60"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="lEq-2y-D9T" customClass="AspectFillImageView" customModule="Emcee" customModuleProvider="target">
@@ -125,7 +125,7 @@
                 </viewController>
                 <customObject id="QJK-jg-4Kl" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1392" y="1103.5"/>
+            <point key="canvasLocation" x="1240" y="1291"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="3qh-7z-pS0">
@@ -153,11 +153,11 @@
             <objects>
                 <viewController storyboardIdentifier="Connect" id="0Se-KN-8Ge" customClass="ConnectViewController" customModule="Emcee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="TEO-WL-xWn">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="400"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MgF-Ng-6mc">
-                                <rect key="frame" x="146" y="133" width="159" height="32"/>
+                                <rect key="frame" x="71" y="183" width="159" height="32"/>
                                 <buttonCell key="cell" type="push" title="Connect to LastFM" bezelStyle="rounded" alignment="center" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="MmZ-V5-ktX">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -175,7 +175,7 @@
                 </viewController>
                 <customObject id="UMq-Ut-hvc" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1392" y="745"/>
+            <point key="canvasLocation" x="1234" y="802"/>
         </scene>
     </scenes>
 </document>

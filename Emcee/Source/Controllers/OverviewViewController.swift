@@ -27,7 +27,7 @@ class OverviewViewController: NSViewController, NSTableViewDataSource, NSTableVi
     override func viewWillAppear() {
         super.viewWillAppear()
         
-        loadTopArtists()
+//        loadTopArtists()
     }
     
     private func loadTopArtists() {

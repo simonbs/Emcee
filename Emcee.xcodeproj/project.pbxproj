@@ -36,8 +36,8 @@
 		72A1F0A81B04C1A5006FA0F1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A1F09D1B04C18B006FA0F1 /* SwiftyJSON.framework */; };
 		72A1F0A91B04C1A5006FA0F1 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72A1F09D1B04C18B006FA0F1 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		72B851951B04C46300937A28 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B851901B04C3D500937A28 /* CryptoSwift.framework */; };
-		72C0A3311B04C30E00357B64 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A1F0991B04C18B006FA0F1 /* SwiftyJSON.framework */; };
-		72C0A3351B04C31500357B64 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A1F0991B04C18B006FA0F1 /* SwiftyJSON.framework */; };
+		72B851A11B04C6B400937A28 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A1F0991B04C18B006FA0F1 /* SwiftyJSON.framework */; };
+		72B851A21B04C6BB00937A28 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A1F0991B04C18B006FA0F1 /* SwiftyJSON.framework */; };
 		72DA7DBE1AC098600018C83C /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72DA7DBD1AC098600018C83C /* CryptoSwift.framework */; };
 		72DA7DC11AC09B880018C83C /* LastFMKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 726BFA621AC0124800CFC4BE /* LastFMKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		72DA7DC31AC09B9B0018C83C /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72DA7DBD1AC098600018C83C /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -159,6 +159,20 @@
 			remoteGlobalIDString = 754BE45419693E190098E6F3;
 			remoteInfo = CryptoSwift;
 		};
+		72B851A31B04C6C900937A28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 72A1F0851B04C18B006FA0F1 /* SwiftyJSON.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C7DFC5A1A9102BD005AA3F7;
+			remoteInfo = "SwiftyJSON OSX";
+		};
+		72B851A51B04C6CE00937A28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 72A1F0851B04C18B006FA0F1 /* SwiftyJSON.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C7DFC5A1A9102BD005AA3F7;
+			remoteInfo = "SwiftyJSON OSX";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -251,8 +265,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72B851A21B04C6BB00937A28 /* SwiftyJSON.framework in Frameworks */,
 				72B851951B04C46300937A28 /* CryptoSwift.framework in Frameworks */,
-				72C0A3311B04C30E00357B64 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +274,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72C0A3351B04C31500357B64 /* SwiftyJSON.framework in Frameworks */,
+				72B851A11B04C6B400937A28 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,6 +547,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				72B851A61B04C6CE00937A28 /* PBXTargetDependency */,
 				72B851971B04C46A00937A28 /* PBXTargetDependency */,
 			);
 			name = LastFMKit;
@@ -553,6 +568,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				72B851A41B04C6C900937A28 /* PBXTargetDependency */,
 			);
 			name = PlayersKit;
 			productName = PlayersKit;
@@ -787,6 +803,16 @@
 			isa = PBXTargetDependency;
 			name = CryptoSwift;
 			targetProxy = 72B851961B04C46A00937A28 /* PBXContainerItemProxy */;
+		};
+		72B851A41B04C6C900937A28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SwiftyJSON OSX";
+			targetProxy = 72B851A31B04C6C900937A28 /* PBXContainerItemProxy */;
+		};
+		72B851A61B04C6CE00937A28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SwiftyJSON OSX";
+			targetProxy = 72B851A51B04C6CE00937A28 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

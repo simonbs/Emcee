@@ -10,4 +10,4 @@ Emcee is developed by [@simonbs](http://twitter.com/simonbs), [simonbs.dk](http:
 
 ## License
 
-NowEmcee is released under the MIT license. Please see the LICENSE file for more information.
+Emcee is released under the MIT license. Please see the LICENSE file for more information.

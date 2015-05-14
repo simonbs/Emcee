@@ -56,6 +56,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         return false
     }
     
+    func statusItemViewRightClicked(view: StatusItemView) {
+        let quitItem = NSMenuItem(title: "Quit", action: "quitApp:", keyEquivalent: "Q")
+        let menu = NSMenu()
+        menu.addItem(quitItem)
+        view.item.popUpStatusItemMenu(menu)
+    }
+    
     func quitApp(sender: AnyObject) {
         NSApplication.sharedApplication().terminate(self)
     }

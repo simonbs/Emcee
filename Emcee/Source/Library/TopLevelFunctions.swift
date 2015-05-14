@@ -14,15 +14,7 @@ func delay(delay: NSTimeInterval, closure: () -> ()) {
 }
 
 func getAppDelegate() -> AppDelegate {
-    return NSApplication.sharedApplication().delegate as AppDelegate
-}
-
-func getLastFMClient() -> LastFMKit.Client {
-    return getAppDelegate().lastFMClient
-}
-
-func getPanelController() -> PanelController {
-    return getAppDelegate().panelController
+    return NSApplication.sharedApplication().delegate as! AppDelegate
 }
 
 func getStatusItemView() -> StatusItemView {

@@ -41,7 +41,7 @@ public class RdioPlayer: BasePlayer {
     }
     
     private func updatePlaybackState() {
-        if (rdio as SBApplication).running {
+        if (rdio as! SBApplication).running {
             if let playerState = rdio.playerState {
                 switch playerState.value {
                 case RdioEPSSPlaying.value:

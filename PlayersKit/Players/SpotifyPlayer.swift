@@ -44,7 +44,7 @@ public class SpotifyPlayer: BasePlayer {
     }
     
     private func updatePlaybackState() {
-        if (spotify as SBApplication).running {
+        if (spotify as! SBApplication).running {
             if let playerState = spotify.playerState {
                 switch playerState.value {
                 case SpotifyEPlSPlaying.value:

@@ -26,7 +26,7 @@ public class Client {
         return performRequest(method: Endpoint.Auth.GetToken.rawValue, completion: { json, error in
             if let error = error {
                 completion(nil, nil, error)
-            } else if let token = json?["token"].string? {
+            } else if let token = json?["token"].string {
                 let redirectURL = "http://www.last.fm/api/auth/?api_key=" + self.apiKey + "&token=" + token
                 completion(token, NSURL(string: redirectURL), nil)
             } else {

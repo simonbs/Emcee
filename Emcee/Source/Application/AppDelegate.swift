@@ -14,8 +14,6 @@ import LastFMKit
 class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate, StatusItemViewDelegate, PlayersAgentDelegate, PlayerDelegate {
     
     internal let statusItemView: StatusItemView
-    internal var panelController: PanelController!
-    internal let lastFMClient = LastFMKit.Client(apiKey: LastFMAPIKey, secret: LastFMSecret)
     
     private let playersAgent = PlayersAgent()
     private var activePlayer: Player?
@@ -39,9 +37,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     }
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        let storyboard = NSStoryboard(name: "PanelStoryboard", bundle: NSBundle.mainBundle())
-        panelController = storyboard?.instantiateInitialController() as PanelController
-        
         let notificationCenter = NSDistributedNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self, selector: "interfaceThemeChanged:", name: themeChangedNotification)
         usePlayer(playersAgent.runningPlayers.first)
@@ -59,35 +54,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         }
         
         return false
-    }
-    
-    func statusItemViewClicked(view: StatusItemView) {
-        if panelController.visible {
-            panelController.hidePanel(animated: true)
-        } else {
-            panelController.showPanel()
-        }
-    }
-    
-    func statusItemViewRightClicked(view: StatusItemView) {
-        panelController.hidePanel(animated: true)
-        
-        let quitItem = NSMenuItem(title: "Quit", action: "quitApp:", keyEquivalent: "Q")
-        let menu = NSMenu()
-        
-        if Preferences().lastFMUsername != nil {
-            let disconnectItem = NSMenuItem(title: "Disconnect from LastFM", action: "disconnectFromLastFM:", keyEquivalent: "")
-            menu.addItem(disconnectItem)
-            menu.addItem(NSMenuItem.separatorItem())
-        }
-        
-        menu.addItem(quitItem)
-        view.item.popUpStatusItemMenu(menu)
-    }
-    
-    func disconnectFromLastFM(sender: AnyObject) {
-        Preferences().lastFMUsername = nil
-        NSNotificationCenter.defaultCenter().postNotificationName(DidDisconnectFromLastFMNotification)
     }
     
     func quitApp(sender: AnyObject) {
@@ -152,7 +118,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         let defaultAttributes = [ NSFontAttributeName: defaultFont ]
         let trackString = NSAttributedString(string: track.trackName, attributes: defaultAttributes)
         
-        if countElements(text) > maxLength {
+        if count(text) > maxLength {
             statusItemView.text = trackString
         } else {
             let artistFont = NSFont.boldSystemFontOfSize(fontSize)
@@ -189,41 +155,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     
     func userNotificationCenter(center: NSUserNotificationCenter, shouldPresentNotification notification: NSUserNotification) -> Bool {
         return true
-    }
-    
-    func handleURLEvent(event: NSAppleEventDescriptor, withReplyEvent replyEvent: NSAppleEventDescriptor) {
-        if let absoluteURL = event.paramDescriptorForKeyword(AEKeyword(keyDirectObject))?.stringValue {
-            if let url = NSURL(string: absoluteURL) {
-                handleURLScheme(url)
-            }
-        }
-    }
-    
-    func handleURLScheme(url: NSURL) {
-        if url.host == "auth" && url.path == "/callback" {
-            handleAuthCallback(url)
-        }
-    }
-    
-    func handleAuthCallback(url: NSURL) {
-        if let params = url.queryParameters {
-            if let token = params["token"] {
-                getLastFMUsername(token)
-            }
-        }
-    }
-    
-    private func getLastFMUsername(token: String) {
-        lastFMClient.getSession(token) { session, error in
-            if let session = session {
-                let preferences = Preferences()
-                preferences.lastFMUsername = session.username
-                preferences.lastFMAuthenticationKey = session.key
-                
-                NSNotificationCenter.defaultCenter().postNotificationName(DidConnectToLastFMNotification)
-                self.panelController.showPanel(animated: true)
-            }
-        }
     }
     
 }

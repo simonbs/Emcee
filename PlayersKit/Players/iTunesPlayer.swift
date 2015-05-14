@@ -41,7 +41,7 @@ public class iTunesPlayer: BasePlayer {
     }
     
     private func updateCurrentTrack() {
-        if (iTunes as SBApplication).running {
+        if (iTunes as! SBApplication).running {
             if let playerState = iTunes.playerState {
                 switch playerState.value {
                 case iTunesEPlSPaused.value:
@@ -57,7 +57,7 @@ public class iTunesPlayer: BasePlayer {
                     playbackState = .Playing
                     if let track = iTunes.currentTrack {
                         let artwork: AnyObject? = track.artworks().firstObject
-                        let data = artwork?.valueForKey("rawData") as NSData
+                        let data = artwork?.valueForKey("rawData") as! NSData
                         let image = NSImage(data: data)
                         currentTrack = Track(
                             artistName: track.artist!,

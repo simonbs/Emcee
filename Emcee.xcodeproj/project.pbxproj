@@ -49,6 +49,8 @@
 		728D09921ACD9618000E75E7 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D09911ACD9618000E75E7 /* OverviewViewController.swift */; };
 		72AF3B851AC0312C0018DC12 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72AF3B831AC030FA0018DC12 /* Alamofire.framework */; };
 		72B38EE71ACB03FE002281DC /* TopTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B38EE61ACB03FE002281DC /* TopTableRowView.swift */; };
+		72C1B2041ACE9AF600FD8EDA /* HeaderTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C1B2031ACE9AF600FD8EDA /* HeaderTableRowView.swift */; };
+		72C1B2061ACEA20400FD8EDA /* Sections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C1B2051ACEA20400FD8EDA /* Sections.swift */; };
 		72CDF6161AC0910D008086C3 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72AF3B831AC030FA0018DC12 /* Alamofire.framework */; };
 		72D09C401AC0337A00913968 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72D09C3E1AC0336400913968 /* SwiftyJSON.framework */; };
 		72DA7DBE1AC098600018C83C /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72DA7DBD1AC098600018C83C /* CryptoSwift.framework */; };
@@ -156,6 +158,8 @@
 		728D09911ACD9618000E75E7 /* OverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		72AF3B831AC030FA0018DC12 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 		72B38EE61ACB03FE002281DC /* TopTableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTableRowView.swift; sourceTree = "<group>"; };
+		72C1B2031ACE9AF600FD8EDA /* HeaderTableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTableRowView.swift; sourceTree = "<group>"; };
+		72C1B2051ACEA20400FD8EDA /* Sections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sections.swift; sourceTree = "<group>"; };
 		72D09C3E1AC0336400913968 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
 		72DA7DBD1AC098600018C83C /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
 		72DA7DC61AC0A8C60018C83C /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
@@ -210,6 +214,7 @@
 				72F314DC1ACAC10A00CA49C5 /* Constants.swift */,
 				720AE3991AC87AEF00627152 /* Preferences.swift */,
 				721B67521AC5CDC700A10B75 /* TopLevelFunctions.swift */,
+				72C1B2051ACEA20400FD8EDA /* Sections.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -360,6 +365,7 @@
 				721B67431AC5C13600A10B75 /* PanelBackgroundView.swift */,
 				725BC4401ACAF86D006393F0 /* TransparentTableView.swift */,
 				72B38EE61ACB03FE002281DC /* TopTableRowView.swift */,
+				72C1B2031ACE9AF600FD8EDA /* HeaderTableRowView.swift */,
 				721D1AA51ACD5DB500A05867 /* AspectFillImageView.swift */,
 			);
 			path = Views;
@@ -559,9 +565,11 @@
 				721D1AB41ACD624400A05867 /* NSViewExtensions.swift in Sources */,
 				721D1AB31ACD624400A05867 /* NSURLExtensions.swift in Sources */,
 				72458A9E1AC5A98700F41B0B /* PanelController.swift in Sources */,
+				72C1B2041ACE9AF600FD8EDA /* HeaderTableRowView.swift in Sources */,
 				720AE3A31AC87E2000627152 /* TopViewController.swift in Sources */,
 				721D1AB21ACD624400A05867 /* NotificationCenterExtensions.swift in Sources */,
 				721B67441AC5C13600A10B75 /* PanelBackgroundView.swift in Sources */,
+				72C1B2061ACEA20400FD8EDA /* Sections.swift in Sources */,
 				72B38EE71ACB03FE002281DC /* TopTableRowView.swift in Sources */,
 				721B673E1AC5B26500A10B75 /* Panel.swift in Sources */,
 				725BC4411ACAF86D006393F0 /* TransparentTableView.swift in Sources */,

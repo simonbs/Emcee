@@ -20,9 +20,14 @@ class TopViewController: NSViewController, NSTableViewDataSource, NSTableViewDel
     @IBOutlet weak var tableView: NSTableView!
     
     internal var delegate: TopViewControllerDelegate?
-    private let rowIdentifier = "TopRow"
+    
+    private let topRowIdentifier = "TopRow"
+    private let headerRowIdentifier = "HeaderRow"
+    
     private var topArtistsRequest: Alamofire.Request?
+    
     private var topArtists: [Artist]?
+    private var sections = Sections<Artist>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +52,11 @@ class TopViewController: NSViewController, NSTableViewDataSource, NSTableViewDel
 
                     if let artists = artists {
                         this.topArtists = artists
+                        
+                        let section = Section<Artist>()
+                        section.items = artists
+                        this.sections.addSection(section)
+                        
                         this.tableView.reloadData()
                     }
                 }
@@ -57,11 +67,17 @@ class TopViewController: NSViewController, NSTableViewDataSource, NSTableViewDel
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
-        return topArtists?.count ?? 0
+        return sections.rowCount
     }
     
     func tableView(tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
-        let view = tableView.makeViewWithIdentifier(rowIdentifier, owner: nil) as TopTableRowView
+        let view = tableView.makeViewWithIdentifier(topRowIdentifier, owner: nil) as TopTableRowView
+        
+        if !sections.isHeaderRow(row) {
+            
+        }
+        
+        
         let artist = topArtists![row]
         view.titleLabel.stringValue = artist.name
         view.detailLabel.stringValue = "\(artist.playcount) plays"

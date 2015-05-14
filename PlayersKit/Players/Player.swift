@@ -33,7 +33,7 @@ public enum PlaybackState: String {
 }
 
 public protocol Player {
-    class var bundleIdentifier: String { get }
+    static var bundleIdentifier: String { get }
     var playerBundleIdentifier: String { get }
     var delegate: PlayerDelegate? { get set }
     var isStarted: Bool { get }

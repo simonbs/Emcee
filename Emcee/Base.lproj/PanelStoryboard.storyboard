@@ -174,6 +174,28 @@
                                                         <outlet property="titleLabel" destination="2cB-ia-ptp" id="rLa-oz-nn8"/>
                                                     </connections>
                                                 </tableCellView>
+                                                <tableCellView identifier="HeaderRow" id="a3e-US-JGE" customClass="HeaderTableRowView" customModule="Emcee" customModuleProvider="target">
+                                                    <rect key="frame" x="1" y="63" width="447" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <subviews>
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2c3-LI-lIW">
+                                                            <rect key="frame" x="8" y="3" width="38" height="17"/>
+                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="gbq-j0-miC">
+                                                                <font key="font" metaFont="system"/>
+                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                        </textField>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="2c3-LI-lIW" firstAttribute="leading" secondItem="a3e-US-JGE" secondAttribute="leading" constant="10" id="3Up-8a-rIg"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2c3-LI-lIW" secondAttribute="trailing" constant="10" id="sbW-sc-mmR"/>
+                                                        <constraint firstAttribute="centerY" secondItem="2c3-LI-lIW" secondAttribute="centerY" constant="1.5" id="zVJ-yF-wJZ"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="titleLabel" destination="2c3-LI-lIW" id="IxZ-je-p1I"/>
+                                                    </connections>
+                                                </tableCellView>
                                             </prototypeCellViews>
                                         </tableColumn>
                                     </tableColumns>

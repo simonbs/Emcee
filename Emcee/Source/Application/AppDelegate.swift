@@ -125,7 +125,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         let defaultAttributes = [ NSFontAttributeName: defaultFont ]
         let trackString = NSAttributedString(string: track.trackName, attributes: defaultAttributes)
         
-        if count(text) > maxLength {
+        if text.characters.count > maxLength {
             statusItemView.text = trackString
         } else {
             let artistFont = NSFont.boldSystemFontOfSize(fontSize)

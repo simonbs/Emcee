@@ -60,7 +60,6 @@ class StatusItemView: NSView {
             let mutableText = NSMutableAttributedString(attributedString: text)
             let entireRange = NSMakeRange(0, mutableText.length)
             
-            var attributes: [String: AnyObject] = [ NSFontNameAttribute: NSFont.systemFontOfSize(20) ]
             if style == .Light {
                 mutableText.addAttribute(NSForegroundColorAttributeName, value: NSColor.whiteColor(), range: entireRange)
             } else {
@@ -68,7 +67,7 @@ class StatusItemView: NSView {
             }
             
             let maxSize = NSSize(width: CGFloat(MAXFLOAT), height: thickness)
-            let textSize = text.boundingRectWithSize(maxSize, options: nil)
+            let textSize = text.boundingRectWithSize(maxSize, options: [])
             let yOffset = (thickness - textSize.height) / 2
             let rect = NSRect(x: 0, y: yOffset + 1, width: textSize.width, height: textSize.height)
             text.drawInRect(rect)

@@ -69,12 +69,12 @@ public class Client {
     
     internal func performRequest(httpMethod: Alamofire.Method = .GET, method: String, params: [String: AnyObject] = [:], completion: (JSON?, NSError?) -> ()) -> Alamofire.Request {
         let allParams = parameters(method, params)
-        return request(httpMethod, baseURL, parameters: allParams, encoding: .URL).responseJSON { (request, response, jsonResponse, error) in
-            if let error = error {
+        return request(httpMethod, baseURL, parameters: allParams, encoding: .URL).responseJSON { response in
+            if let error = response.result.error {
                 return completion(nil, error)
             }
             
-            if let jsonResponse = jsonResponse as? [String: AnyObject] {
+            if let jsonResponse = response.result.value as? [String: AnyObject] {
                 if let lastFMError = Error.createError(jsonResponse) {
                     return completion(nil, lastFMError)
                 }
@@ -96,8 +96,8 @@ public class Client {
         return allParams
     }
     
-    private func signature(_ params: [String: AnyObject] = [:]) -> String {
-        let sortedParams = sorted(params) { $0.0 < $1.0 }
+    private func signature(params: [String: AnyObject] = [:]) -> String {
+        let sortedParams = params.sort { $0.0 < $1.0 }
         var str = ""
         for (key, value) in sortedParams {
             if let strValue = value as? String {
@@ -106,7 +106,7 @@ public class Client {
         }
         
         str = str + secret
-        return str.md5()!
+        return str.md5()
     }
     
 }

@@ -15,7 +15,7 @@ public class iTunesPlayer: BasePlayer {
     override public var playerBundleIdentifier: String { return iTunesPlayer.bundleIdentifier }
     
     private let playbackStateChangedNotification = "com.apple.iTunes.playerInfo"
-    private let iTunes: iTunesApplication = SBApplication(bundleIdentifier: iTunesPlayer.bundleIdentifier)
+    private let iTunes: iTunesApplication = SBApplication(bundleIdentifier: iTunesPlayer.bundleIdentifier)!
 
     override public func start() {
         if !isStarted {
@@ -43,17 +43,17 @@ public class iTunesPlayer: BasePlayer {
     private func updateCurrentTrack() {
         if (iTunes as! SBApplication).running {
             if let playerState = iTunes.playerState {
-                switch playerState.value {
-                case iTunesEPlSPaused.value:
+                switch playerState {
+                case iTunesEPlSPaused:
                     playbackState = .Paused
-                case iTunesEPlSStopped.value:
+                case iTunesEPlSStopped:
                     playbackState = .Stopped
                     currentTrack = nil
-                case iTunesEPlSFastForwarding.value:
+                case iTunesEPlSFastForwarding:
                     fallthrough
-                case iTunesEPlSRewinding.value:
+                case iTunesEPlSRewinding:
                     fallthrough
-                case iTunesEPlSPlaying.value:
+                case iTunesEPlSPlaying:
                     playbackState = .Playing
                     if let track = iTunes.currentTrack {
                         let artwork: AnyObject? = track.artworks().firstObject

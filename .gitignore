@@ -4,7 +4,7 @@
 .\#*
 
 DerivedData/
-build/
+Carthage/
 *~.nib
 xcuserdata/
 *.xcuserstate
@@ -12,7 +12,3 @@ xcuserdata/
 *.ipa
 *.
 *.dSYM.zip
-Error*.png
-*.mobileprovision
-fastlane/screenshots
-fastlane/report.xml

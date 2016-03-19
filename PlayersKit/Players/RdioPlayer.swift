@@ -15,7 +15,7 @@ public class RdioPlayer: BasePlayer {
     override public var playerBundleIdentifier: String { return RdioPlayer.bundleIdentifier }
     
     private let playbackStateChangedNotification = "com.rdio.desktop.playStateChanged"
-    private let rdio: RdioApplication = SBApplication(bundleIdentifier: RdioPlayer.bundleIdentifier)
+    private let rdio: RdioApplication = SBApplication(bundleIdentifier: RdioPlayer.bundleIdentifier)!
     
     override public func start() {
         if !isStarted {
@@ -43,8 +43,8 @@ public class RdioPlayer: BasePlayer {
     private func updatePlaybackState() {
         if (rdio as! SBApplication).running {
             if let playerState = rdio.playerState {
-                switch playerState.value {
-                case RdioEPSSPlaying.value:
+                switch playerState {
+                case RdioEPSSPlaying:
                     playbackState = .Playing
                     if let track = rdio.currentTrack {
                         currentTrack = Track(
@@ -53,9 +53,9 @@ public class RdioPlayer: BasePlayer {
                             albumName: track.album!,
                             artwork: track.artwork)
                     }
-                case RdioEPSSPaused.value:
+                case RdioEPSSPaused:
                     playbackState = .Paused
-                case RdioEPSSStopped.value:
+                case RdioEPSSStopped:
                     playbackState = .Stopped
                     currentTrack = nil
                 default:

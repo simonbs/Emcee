@@ -17,7 +17,7 @@ public class SpotifyPlayer: BasePlayer {
     override public var playerBundleIdentifier: String { return SpotifyPlayer.bundleIdentifier }
     
     private let playbackStateChangedNotification = "com.spotify.client.PlaybackStateChanged"
-    private let spotify: SpotifyApplication = SBApplication(bundleIdentifier: SpotifyPlayer.bundleIdentifier)
+    private let spotify: SpotifyApplication = SBApplication(bundleIdentifier: SpotifyPlayer.bundleIdentifier)!
     private var artworkRequest: Request?
     
     override public func start() {
@@ -46,15 +46,15 @@ public class SpotifyPlayer: BasePlayer {
     private func updatePlaybackState() {
         if (spotify as! SBApplication).running {
             if let playerState = spotify.playerState {
-                switch playerState.value {
-                case SpotifyEPlSPlaying.value:
+                switch playerState {
+                case SpotifyEPlSPlaying:
                     playbackState = .Playing
                     if let track = spotify.currentTrack {
                         setTrackFromSpotifyTrack(track)
                     }
-                case SpotifyEPlSPaused.value:
+                case SpotifyEPlSPaused:
                     playbackState = .Paused
-                case SpotifyEPlSStopped.value:
+                case SpotifyEPlSStopped:
                     playbackState = .Stopped
                     currentTrack = nil
                 default:
@@ -72,8 +72,8 @@ public class SpotifyPlayer: BasePlayer {
         if let trackId = track.id?() {
             let url = "https://embed.spotify.com/oembed/"
             let params = [ "url": trackId ]
-            artworkRequest = Alamofire.request(.GET, url, parameters: params, encoding: .URL).responseJSON { (request, response, jsonResponse, error) in
-                if let jsonResponse: AnyObject = jsonResponse {
+            artworkRequest = Alamofire.request(.GET, url, parameters: params, encoding: .URL).responseJSON { response in
+                if let jsonResponse = response.result.value {
                     let json = JSON(jsonResponse)
                     if let artworkUrl = json["thumbnail_url"].URL {
                         self.setCurrentTrack(track, artwork: NSImage(contentsOfURL: artworkUrl))

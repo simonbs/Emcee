@@ -36,12 +36,11 @@ public class PlayersAgent: NSObject {
     }
     
     private func addRunningPlayers() {
-        if let runningApplications = NSWorkspace.sharedWorkspace().runningApplications as? [NSRunningApplication] {
-            for app in runningApplications {
-                if let bundleIdentifier = app.bundleIdentifier {
-                    if isSupportedBundleIdentifier(bundleIdentifier) {
-                        addPlayerWithBundleIdentifier(bundleIdentifier)
-                    }
+        let runningApplications = NSWorkspace.sharedWorkspace().runningApplications
+        runningApplications.forEach { app in
+            if let bundleIdentifier = app.bundleIdentifier {
+                if isSupportedBundleIdentifier(bundleIdentifier) {
+                    addPlayerWithBundleIdentifier(bundleIdentifier)
                 }
             }
         }
@@ -63,7 +62,7 @@ public class PlayersAgent: NSObject {
     }
     
     private func isSupportedBundleIdentifier(bundleIdentifier: String) -> Bool {
-        return find(supportedBundleIdentifiers, bundleIdentifier) != nil
+        return supportedBundleIdentifiers.contains(bundleIdentifier)
     }
     
     private func addPlayerWithBundleIdentifier(bundleIdentifier: String) {

@@ -107,10 +107,6 @@ public class Error {
             return "This type of request is no longer supported"
         case .RateLimitExceeded:
             return "Your IP has made too many requests in a short period, exceeding our API guidelines"
-        default:
-            break
         }
-        
-        return "Unknown error"
     }
 }

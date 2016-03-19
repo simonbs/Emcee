@@ -30,11 +30,11 @@ public class Artist {
     }
     
     public func smallestImage() -> Asset? {
-        return images.sorted { a, b in a.rank < b.rank }.first
+        return images.sort { $0.rank < $1.rank }.first
     }
     
     public func largestImage() -> Asset? {
-        return images.sorted { a, b in a.rank > b.rank }.first
+        return images.sort { $0.rank > $1.rank }.first
     }
    
 }

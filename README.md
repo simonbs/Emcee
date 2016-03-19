@@ -2,7 +2,7 @@
 
 ![Screenshot](https://raw.githubusercontent.com/simonbs/Emcee/master/screenshot.png)
 
-Emcee shows the artist and title of the track currently playing in Spotify, iTunes or Radio in the menu bar and shows a notification when the track changes.
+Emcee shows the artist and title of the track currently playing in Spotify, iTunes or Rdio in the menu bar and shows a notification when the track changes.
 
 ## Credits
 
